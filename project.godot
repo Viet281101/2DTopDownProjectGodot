@@ -8,11 +8,37 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Shaker",
+"language": "GDScript",
+"path": "res://Script/Shaker.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Script/StateMachine.gd"
+} ]
+_global_script_class_icons={
+"Shaker": "",
+"StateMachine": ""
+}
+
 [application]
 
 config/name="Gift for my Lord"
 run/main_scene="res://Main.tscn"
 config/icon="res://murray.png"
+
+[debug]
+
+gdscript/warnings/unassigned_variable=false
+gdscript/warnings/unassigned_variable_op_assign=false
+gdscript/warnings/unused_variable=false
+gdscript/warnings/shadowed_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
 
 [layer_names]
 
