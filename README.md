@@ -17,3 +17,8 @@
 - [Castle Tiles](https://opengameart.org/content/castle-tiles-for-rpgs)
 
 
+
+#### 3) <ins> **Fonts** </ins>:
+- [Alagard](https://www.dafont.com/alagard.font)
+- [Perfect Dos VGA 437](https://www.dafont.com/perfect-dos-vga-437.font)
+
