@@ -18,7 +18,7 @@
 
 
 
-#### 3) <ins> **Fonts** </ins>:
+#### 3) <ins> **Fonts in [dafont.com](https://www.dafont.com/bitmap.php)** </ins>:
 - [Alagard](https://www.dafont.com/alagard.font)
 - [Perfect Dos VGA 437](https://www.dafont.com/perfect-dos-vga-437.font)
 
