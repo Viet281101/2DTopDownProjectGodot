@@ -2288,7 +2288,7 @@ points = PoolVector2Array( 40, 32, 8, 32, 8, 16, 40, 16 )
 } ]
 50/z_index = 0
 
-[node name="TileMap" type="Node2D"]
+[node name="TileCatacombs" type="Node2D"]
 
 [node name="ground_square" type="TileMap" parent="."]
 z_index = -1

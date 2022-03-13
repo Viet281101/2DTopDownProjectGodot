@@ -1,6 +1,7 @@
 class_name State
 extends Node
 
+signal finished(next_state_name)
 
 var state_machine = null
 
@@ -31,3 +32,6 @@ func enter(_msg := {}) -> void:
 func exit() -> void:
 	pass
 
+
+func _on_animation_finished(anim_name):
+	return

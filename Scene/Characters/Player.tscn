@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/characters/warrior/walk-with-weapon.png" type="Texture" id=1]
 [ext_resource path="res://Script/Characters/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/characters/warrior/idle.png" type="Texture" id=3]
+[ext_resource path="res://assets/characters/warrior/walk.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=6]
 radius = 5.0
@@ -263,7 +263,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite:frame")
@@ -328,7 +328,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite:frame")
