@@ -18,16 +18,10 @@ _global_script_classes=[ {
 "class": "State",
 "language": "GDScript",
 "path": "res://Script/Characters/states/state.gd"
-}, {
-"base": "Node",
-"class": "StateMachine",
-"language": "GDScript",
-"path": "res://Script/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "Player": "",
-"State": "",
-"StateMachine": ""
+"State": ""
 }
 
 [application]
@@ -35,6 +29,10 @@ _global_script_class_icons={
 config/name="Gift for my Lord"
 run/main_scene="res://Main.tscn"
 config/icon="res://murray.png"
+
+[autoload]
+
+Global="*res://Script/Autoload/Global.gd"
 
 [debug]
 

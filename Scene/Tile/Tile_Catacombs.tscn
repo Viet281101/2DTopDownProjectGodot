@@ -2295,6 +2295,8 @@ z_index = -1
 tile_set = SubResource( 23 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+collision_layer = 0
+collision_mask = 0
 format = 1
 
 [node name="ground_mini_spuare" type="TileMap" parent="."]
@@ -2302,22 +2304,27 @@ z_index = -1
 tile_set = SubResource( 28 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+collision_layer = 0
+collision_mask = 0
 format = 1
 
 [node name="Terrain" type="YSort" parent="."]
 
 [node name="levbuild_object" parent="Terrain" instance=ExtResource( 2 )]
 cell_y_sort = true
+collision_mask = 0
 
 [node name="terrain_red" type="TileMap" parent="Terrain"]
 tile_set = SubResource( 22 )
 cell_size = Vector2( 8, 8 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 cell_y_sort = true
+collision_mask = 0
 format = 1
 
 [node name="decor" type="TileMap" parent="Terrain"]
 tile_set = SubResource( 34 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
+collision_mask = 0
 format = 1
