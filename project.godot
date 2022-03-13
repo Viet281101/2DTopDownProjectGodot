@@ -9,10 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "Shaker",
+"base": "KinematicBody2D",
+"class": "Player",
 "language": "GDScript",
-"path": "res://Script/Shaker.gd"
+"path": "res://Script/Characters/Player.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://Script/Characters/states/state.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
@@ -20,7 +25,8 @@ _global_script_classes=[ {
 "path": "res://Script/StateMachine.gd"
 } ]
 _global_script_class_icons={
-"Shaker": "",
+"Player": "",
+"State": "",
 "StateMachine": ""
 }
 

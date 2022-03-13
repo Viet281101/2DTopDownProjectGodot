@@ -1,40 +1,47 @@
-extends Node
 class_name StateMachine
+extends Node
 
-var state = null setget set_state
-var previous_state = null
-var states = {}
+# Emitted when transitioning to a new state.
+signal transitioned(state_name)
 
-onready var parent = get_parent()
+# Path to the initial active state. We export it to be able to pick the initial state in the inspector.
+export var initial_state := NodePath()
 
-func _physics_process(delta):
-	if state != null:
-		_state_logic(delta)
-		var transition = _get_transition(delta)
-		if transition != null:
-			set_state(transition)
+# The current active state. At the start of the game, we get the `initial_state`.
+onready var state: State = get_node(initial_state)
 
-func _state_logic(delta):
-	pass
 
-func _get_transition(delta):
-	return null
+func _ready() -> void:
+	yield(owner, "ready")
+	# The state machine assigns itself to the State objects' state_machine property.
+	for child in get_children():
+		child.state_machine = self
+	state.enter()
 
-func _enter_state(new_state, old_state):
-	pass
 
-func _exit_state(old_state, new_state):
-	pass
+# The state machine subscribes to node callbacks and delegates them to the state objects.
+func _unhandled_input(event: InputEvent) -> void:
+	state.handle_input(event)
 
-func set_state(new_state):
-	previous_state = state
-	state = new_state
-	
-	if previous_state != null:
-		_exit_state(previous_state, new_state)
-	if new_state != null:
-		_enter_state(new_state, previous_state)
 
-func add_state(state_name):
-	if !state_name in states:
-		states[state_name] = states.size()
+func _process(delta: float) -> void:
+	state.update(delta)
+
+
+func _physics_process(delta: float) -> void:
+	state.physics_update(delta)
+
+
+# This function calls the current state's exit() function, then changes the active state and calls its enter function.
+# It optionally takes a `msg` dictionary to pass to the next state's enter() function.
+func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
+	if not has_node(target_state_name):
+		return
+
+	state.exit()
+	state = get_node(target_state_name)
+	state.enter(msg)
+	emit_signal("transitioned", state.name)
+
+
+

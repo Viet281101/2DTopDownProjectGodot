@@ -1,5 +1,5 @@
 
-## ![ale text](assets/world/decorate/statue_sword.png) This is a story inside the castle.
+## ![ale text](assets/world/decorate/statue_sword.png) This is a story inside the castle. ![alt text](murray.png)
 
 -----------------------------------------------------------------------------------------
 ### Ressources game: 
