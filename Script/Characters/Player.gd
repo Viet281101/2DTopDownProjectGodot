@@ -9,6 +9,8 @@ var look_direction = Vector2(1, 0) setget set_look_direction
 var states_stack = []
 var current_state = null
 
+# State Machine Node:
+export (NodePath) onready var state_machine = get_node(state_machine) as Node
 export (NodePath) onready var idle_state = get_node(idle_state) as Node
 export (NodePath) onready var walk_state = get_node(walk_state) as Node
 export (NodePath) onready var run_state = get_node(run_state) as Node
@@ -35,10 +37,22 @@ onready var states_map = {
 
 
 func _ready():
-	pass
+	for state_node in state_machine.get_children():
+		state_node.connect("finished", self, "_change_state")
 
 
+func _physics_process(delta):
+	current_state.update(delta)
+
+
+func _change_state(state_name):
+	current_state.exit()
+	
+	if state_name == "previous":
+		states_stack.pop_front()
+	
 
 func set_look_direction(value):
 	look_direction = value
 	emit_signal("direction_changed", value)
+
