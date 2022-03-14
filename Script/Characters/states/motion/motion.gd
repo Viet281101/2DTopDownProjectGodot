@@ -7,6 +7,8 @@ onready var animation_tree = owner.get_node("AnimationTree")
 func handle_input(event):
 	if event.is_action_pressed("ui_attack"):
 		emit_signal("finished", "attack")
+	if event.is_action_pressed("ui_dash") && Global.can_dash && !Global.is_dashing:
+		emit_signal("finished", "dash")
 
 func get_input_direction():
 	var input_vector = Vector2()
@@ -22,6 +24,7 @@ func update_look_direction(input_vector):
 		animation_tree.set("parameters/Run/blend_position", input_vector)
 		animation_tree.set("parameters/Jump/blend_position", input_vector)
 		animation_tree.set("parameters/Roll/blend_position", input_vector)
+		animation_tree.set("parameters/Dash/blend_position", input_vector)
 		animation_tree.set("parameters/Attack/blend_position", input_vector)
 		animation_tree.set("parameters/Defense/blend_position", input_vector)
 		animation_tree.set("parameters/Kick/blend_position", input_vector)

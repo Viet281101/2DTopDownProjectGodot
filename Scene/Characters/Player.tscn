@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://assets/characters/warrior/run.png" type="Texture" id=1]
 [ext_resource path="res://Script/Characters/Player.gd" type="Script" id=2]
@@ -18,6 +18,13 @@
 [ext_resource path="res://Script/Characters/states/combat/Kick.gd" type="Script" id=16]
 [ext_resource path="res://Script/Characters/states/combat/Hurt.gd" type="Script" id=17]
 [ext_resource path="res://Script/Characters/states/Die.gd" type="Script" id=18]
+[ext_resource path="res://Scene/Characters/States/Dash.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Script/Shader/white_color.shader" type="Shader" id=20]
+
+[sub_resource type="ShaderMaterial" id=132]
+shader = ExtResource( 20 )
+shader_param/whiten = false
+shader_param/mix_weight = 1.0
 
 [sub_resource type="CapsuleShape2D" id=88]
 radius = 5.0
@@ -98,6 +105,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=16]
 resource_name = "Defense_Right"
@@ -173,6 +192,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=90]
@@ -263,6 +294,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=91]
 resource_name = "Idle_Right"
@@ -352,6 +395,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "Jump_Left"
@@ -428,6 +483,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=92]
 resource_name = "Jump_Right"
@@ -503,6 +570,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=93]
@@ -591,6 +670,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [ 2 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "Roll_Left"
@@ -667,6 +758,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=94]
 resource_name = "Roll_Right"
@@ -742,6 +845,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=95]
@@ -820,6 +935,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=96]
 resource_name = "Run_Right"
@@ -896,6 +1023,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=97]
@@ -974,6 +1113,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=98]
 resource_name = "Walk_Right"
@@ -1050,6 +1201,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=99]
@@ -1321,6 +1484,8 @@ font_data = SubResource( 86 )
 collision_layer = 4
 script = ExtResource( 2 )
 player_col = NodePath("CollisionShape2D")
+body_pivot = NodePath("BodyPivot")
+dust_trail_pos = NodePath("DustTrailPos")
 animationPlayer = NodePath("AnimationPlayer")
 animationTree = NodePath("AnimationTree")
 state_machine = NodePath("StateMachine")
@@ -1329,6 +1494,7 @@ walk_state = NodePath("StateMachine/Walk")
 run_state = NodePath("StateMachine/Run")
 jump_state = NodePath("StateMachine/Jump")
 roll_state = NodePath("StateMachine/Roll")
+dash_state = NodePath("StateMachine/Dash")
 attack_state = NodePath("StateMachine/Attack")
 kick_state = NodePath("StateMachine/Kick")
 defense_state = NodePath("StateMachine/Defense")
@@ -1338,10 +1504,14 @@ die_state = NodePath("StateMachine/Die")
 [node name="BodyPivot" type="Position2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="BodyPivot"]
+material = SubResource( 132 )
 position = Vector2( 20, -25 )
 texture = ExtResource( 3 )
 hframes = 6
 vframes = 2
+
+[node name="DustTrailPos" type="Position2D" parent="."]
+position = Vector2( 4, 29 )
 
 [node name="SpriteWithWeapon" type="Sprite" parent="."]
 visible = false
@@ -1349,6 +1519,7 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 20 )
 shape = SubResource( 88 )
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Defense_Left = SubResource( 89 )
@@ -1389,10 +1560,12 @@ script = ExtResource( 10 )
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource( 12 )
-GRAVITY = 2200.0
+GRAVITY = 3000.0
 
 [node name="Roll" type="Node" parent="StateMachine"]
 script = ExtResource( 9 )
+
+[node name="Dash" parent="StateMachine" instance=ExtResource( 19 )]
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource( 15 )
@@ -1423,3 +1596,5 @@ script = ExtResource( 14 )
 
 [connection signal="state_changed" from="." to="StateNameDisplay" method="_on_Player_state_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+
+[editable path="StateMachine/Dash"]

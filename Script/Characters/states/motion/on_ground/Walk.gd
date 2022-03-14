@@ -17,7 +17,7 @@ func enter():
 func handle_input(event):
 	return .handle_input(event)
 
-func update(delta):
+func physics_update(delta):
 	var input_direction = get_input_direction()
 	if not input_direction:
 		emit_signal("finished", "idle")

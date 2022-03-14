@@ -39,7 +39,7 @@ func enter():
 	
 	animation_state.travel("Jump")
 
-func update(delta):
+func physics_update(delta):
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
 

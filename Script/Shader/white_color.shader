@@ -1,13 +1,16 @@
+
 shader_type canvas_item;
 
-uniform bool active = false;
+uniform bool whiten = false;
+uniform float mix_weight = 1.0;
 
 void fragment() {
-	vec4 previous_color = texture(TEXTURE, UV);
-	vec4 white_color = vec4(1.0, 1.0, 1.0, previous_color.a);
-	vec4 new_color = previous_color;
-	if (active == true) {
-		new_color = white_color
+	vec4 texture_color = texture(TEXTURE, UV);
+	if (whiten) {
+		vec3 white = vec3(1,1,1);
+		vec3 whitened_texture_rgb = mix(texture_color.rgb, white, mix_weight);
+		COLOR = vec4(whitened_texture_rgb, texture_color.a);
+	} else {
+		COLOR = texture_color
 	}
-	COLOR = new_color;
 }

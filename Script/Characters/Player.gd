@@ -11,6 +11,8 @@ var current_state = null
 
 ### Player nodes:
 export (NodePath) onready var player_col = get_node(player_col) as CollisionShape2D
+export (NodePath) onready var body_pivot = get_node(body_pivot) as Position2D
+export (NodePath) onready var dust_trail_pos = get_node(dust_trail_pos) as Position2D
 export (NodePath) onready var animationPlayer = get_node(animationPlayer) as AnimationPlayer
 export (NodePath) onready var animationTree = get_node(animationTree) as AnimationTree
 
@@ -21,6 +23,7 @@ export (NodePath) onready var walk_state = get_node(walk_state) as Node
 export (NodePath) onready var run_state = get_node(run_state) as Node
 export (NodePath) onready var jump_state = get_node(jump_state) as Node
 export (NodePath) onready var roll_state = get_node(roll_state) as Node
+export (NodePath) onready var dash_state = get_node(dash_state) as Node
 export (NodePath) onready var attack_state = get_node(attack_state) as Node
 export (NodePath) onready var kick_state = get_node(kick_state) as Node
 export (NodePath) onready var defense_state = get_node(defense_state) as Node
@@ -33,6 +36,7 @@ onready var states_map = {
 	"run": run_state,
 	"jump": jump_state,
 	"roll": roll_state,
+	"dash": dash_state,
 	"attack": attack_state,
 	"kick": kick_state,
 	"defense": defense_state,
@@ -49,9 +53,15 @@ func _ready():
 	current_state = states_stack[0]
 	_change_state("idle")
 
+func _process(delta):
+	current_state.update(delta)
 
 func _physics_process(delta):
-	current_state.update(delta)
+	current_state.physics_update(delta)
+	
+	Global.is_dashing = dash_state.is_dashing()
+	dust_trail_pos.global_position = body_pivot.global_position + Vector2(4, 29)
+	player_col.global_position = body_pivot.global_position + Vector2(0, 20)
 
 func _input(event):
 	current_state.handle_input(event)
@@ -61,7 +71,7 @@ func _change_state(state_name):
 	
 	if state_name == "previous":
 		states_stack.pop_front()
-	elif state_name in ["jump", "roll", "attack", "kick", "defense"]:
+	elif state_name in ["jump", "roll", "dash", "attack", "kick", "defense"]:
 		states_stack.push_front(states_map[state_name])
 	elif state_name == "dead":
 		queue_free()
