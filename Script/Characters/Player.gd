@@ -53,6 +53,8 @@ func _ready():
 func _physics_process(delta):
 	current_state.update(delta)
 
+func _input(event):
+	current_state.handle_input(event)
 
 func _change_state(state_name):
 	current_state.exit()
@@ -70,6 +72,7 @@ func _change_state(state_name):
 	
 	if state_name == "jump":
 		jump_state.initialize(current_state.speed, current_state.velocity)
+	
 	current_state = states_stack[0]
 	if state_name != "previous":
 		# To not reinitialize the state if we"re going back to the previous state

@@ -1389,6 +1389,7 @@ script = ExtResource( 10 )
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource( 12 )
+GRAVITY = 2200.0
 
 [node name="Roll" type="Node" parent="StateMachine"]
 script = ExtResource( 9 )

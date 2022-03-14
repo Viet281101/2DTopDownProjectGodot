@@ -4,7 +4,7 @@
 
 
 -----------------------------------------------------------------------------------------
-### ![alt text](assets/world/decorate/candle/candleB_04.png) Ressources game (_links_) ![alt text](assets/world/decorate/candle/candleA_03.png): 
+### ![alt text](assets/world/decorate/candle/candleB_04.png) Links for the ressources game ![alt text](assets/world/decorate/candle/candleA_03.png): 
 
 #### 1) <ins> **Packs in [itch.io](https://itch.io/)** </ins>:
 - [Rogue Fantasy "Catacombs"](https://itch.io/queue/c/2326617/pixel-pack?game_id=603480).

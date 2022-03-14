@@ -6,7 +6,6 @@ onready var animation_tree = owner.get_node("AnimationTree")
 
 func handle_input(event):
 	if event.is_action_pressed("ui_attack"):
-		print("attacking")
 		emit_signal("finished", "attack")
 
 func get_input_direction():

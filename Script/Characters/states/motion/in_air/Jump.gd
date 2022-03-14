@@ -46,7 +46,7 @@ func update(delta):
 	move_horizontally(delta, input_direction)
 	animate_jump_height(delta)
 	if height <= 0.0:
-		emit_signal("finished", "previous")
+		emit_signal("finished", "idle")
 
 func move_horizontally(delta, direction):
 	if direction:
