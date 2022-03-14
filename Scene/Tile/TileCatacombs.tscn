@@ -1036,7 +1036,7 @@ points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
 4/shape_one_way = false
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
-4/z_index = 0
+4/z_index = -2
 5/name = "mainlevbuild.png 5"
 5/texture = ExtResource( 4 )
 5/tex_offset = Vector2( 0, 0 )
@@ -1050,7 +1050,7 @@ points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
 5/shape_one_way = false
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
-5/z_index = 0
+5/z_index = -2
 6/name = "mainlevbuild.png 6"
 6/texture = ExtResource( 4 )
 6/tex_offset = Vector2( 0, 0 )
@@ -1064,7 +1064,7 @@ points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
 6/shape_one_way = false
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
-6/z_index = 0
+6/z_index = -2
 7/name = "mainlevbuild.png 7"
 7/texture = ExtResource( 4 )
 7/tex_offset = Vector2( 0, 0 )
@@ -1260,7 +1260,7 @@ points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
 18/shape_one_way = false
 18/shape_one_way_margin = 0.0
 18/shapes = [  ]
-18/z_index = 0
+18/z_index = -2
 19/name = "mainlevbuild.png 19"
 19/texture = ExtResource( 4 )
 19/tex_offset = Vector2( 0, 0 )
@@ -1274,7 +1274,7 @@ points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
 19/shape_one_way = false
 19/shape_one_way_margin = 0.0
 19/shapes = [  ]
-19/z_index = 0
+19/z_index = -2
 20/name = "mainlevbuild.png 20"
 20/texture = ExtResource( 4 )
 20/tex_offset = Vector2( 0, 0 )
@@ -1482,7 +1482,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 56 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-0/z_index = 0
+0/z_index = -1
 1/name = "mainlevbuild.png 1"
 1/texture = ExtResource( 4 )
 1/tex_offset = Vector2( 0, 0 )
@@ -1503,7 +1503,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 57 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-1/z_index = 0
+1/z_index = -1
 2/name = "mainlevbuild.png 2"
 2/texture = ExtResource( 4 )
 2/tex_offset = Vector2( 0, 0 )
@@ -1524,7 +1524,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 63 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-2/z_index = 0
+2/z_index = -1
 3/name = "mainlevbuild.png 3"
 3/texture = ExtResource( 4 )
 3/tex_offset = Vector2( 0, 0 )
@@ -1545,7 +1545,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 65 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-3/z_index = 0
+3/z_index = -1
 4/name = "mainlevbuild.png 4"
 4/texture = ExtResource( 4 )
 4/tex_offset = Vector2( 0, 0 )
@@ -1566,7 +1566,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 66 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-4/z_index = 0
+4/z_index = -1
 5/name = "mainlevbuild.png 5"
 5/texture = ExtResource( 4 )
 5/tex_offset = Vector2( 0, 0 )
@@ -1587,7 +1587,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 67 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-5/z_index = 0
+5/z_index = -1
 6/name = "mainlevbuild.png 6"
 6/texture = ExtResource( 4 )
 6/tex_offset = Vector2( 0, 0 )
@@ -1608,7 +1608,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 68 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-6/z_index = 0
+6/z_index = -1
 7/name = "mainlevbuild.png 7"
 7/texture = ExtResource( 4 )
 7/tex_offset = Vector2( 0, 0 )
@@ -1629,7 +1629,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 53 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-7/z_index = 0
+7/z_index = -1
 8/name = "mainlevbuild.png 8"
 8/texture = ExtResource( 4 )
 8/tex_offset = Vector2( 0, 0 )
@@ -1650,7 +1650,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 54 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-8/z_index = 0
+8/z_index = -1
 9/name = "mainlevbuild.png 9"
 9/texture = ExtResource( 4 )
 9/tex_offset = Vector2( 0, 0 )
@@ -1671,7 +1671,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 55 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-9/z_index = 0
+9/z_index = -1
 10/name = "mainlevbuild.png 10"
 10/texture = ExtResource( 4 )
 10/tex_offset = Vector2( 0, 0 )
@@ -1692,7 +1692,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 69 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-10/z_index = 0
+10/z_index = -1
 11/name = "mainlevbuild.png 11"
 11/texture = ExtResource( 4 )
 11/tex_offset = Vector2( 0, 0 )
@@ -1713,7 +1713,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 70 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-11/z_index = 0
+11/z_index = -1
 12/name = "mainlevbuild.png 12"
 12/texture = ExtResource( 4 )
 12/tex_offset = Vector2( 0, 0 )
@@ -1734,7 +1734,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 71 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-12/z_index = 0
+12/z_index = -1
 13/name = "mainlevbuild.png 13"
 13/texture = ExtResource( 4 )
 13/tex_offset = Vector2( 0, 0 )
@@ -1755,7 +1755,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 72 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-13/z_index = 0
+13/z_index = -1
 14/name = "mainlevbuild.png 14"
 14/texture = ExtResource( 4 )
 14/tex_offset = Vector2( 0, 0 )
@@ -1776,7 +1776,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 58 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-14/z_index = 0
+14/z_index = -1
 15/name = "mainlevbuild.png 15"
 15/texture = ExtResource( 4 )
 15/tex_offset = Vector2( 0, 0 )
@@ -1797,7 +1797,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 59 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-15/z_index = 0
+15/z_index = -1
 16/name = "mainlevbuild.png 16"
 16/texture = ExtResource( 4 )
 16/tex_offset = Vector2( 0, 0 )
@@ -1832,7 +1832,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 60 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-17/z_index = 0
+17/z_index = -1
 18/name = "mainlevbuild.png 18"
 18/texture = ExtResource( 4 )
 18/tex_offset = Vector2( 0, 0 )
@@ -1853,7 +1853,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 61 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-18/z_index = 0
+18/z_index = -1
 19/name = "mainlevbuild.png 19"
 19/texture = ExtResource( 4 )
 19/tex_offset = Vector2( 0, 0 )
@@ -1874,7 +1874,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 62 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-19/z_index = 0
+19/z_index = -1
 20/name = "mainlevbuild.png 20"
 20/texture = ExtResource( 4 )
 20/tex_offset = Vector2( 0, 0 )
@@ -1895,7 +1895,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 64 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-20/z_index = 0
+20/z_index = -1
 21/name = "mainlevbuild.png 21"
 21/texture = ExtResource( 4 )
 21/tex_offset = Vector2( 0, 0 )
@@ -1916,7 +1916,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 24 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-21/z_index = 0
+21/z_index = -1
 22/name = "mainlevbuild.png 22"
 22/texture = ExtResource( 4 )
 22/tex_offset = Vector2( 0, 0 )
@@ -1958,7 +1958,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 26 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-23/z_index = 0
+23/z_index = -1
 24/name = "mainlevbuild.png 24"
 24/texture = ExtResource( 4 )
 24/tex_offset = Vector2( 0, 0 )
@@ -1979,7 +1979,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 27 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-24/z_index = 0
+24/z_index = -1
 25/name = "mainlevbuild.png 25"
 25/texture = ExtResource( 4 )
 25/tex_offset = Vector2( 0, 0 )
