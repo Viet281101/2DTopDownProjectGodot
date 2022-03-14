@@ -28,8 +28,8 @@ func physics_update(delta):
 	var velocity = input_direction.normalized() * speed * delta
 	owner.move_and_slide(velocity)
 	
-	dust_trail.global_position = owner.get_node("DustTrailPos").global_position
-	dust_burst.global_position = owner.get_node("DustTrailPos").global_position
+	dust_trail.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -16)
+	dust_burst.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -16)
 	
 	if not input_direction:
 		animation_state.travel("Idle")

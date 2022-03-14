@@ -60,7 +60,7 @@ func _physics_process(delta):
 	current_state.physics_update(delta)
 	
 	Global.is_dashing = dash_state.is_dashing()
-	dust_trail_pos.global_position = body_pivot.global_position + Vector2(4, 29)
+	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
 	player_col.global_position = body_pivot.global_position + Vector2(0, 20)
 
 func _input(event):

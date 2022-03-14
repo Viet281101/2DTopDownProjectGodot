@@ -23,6 +23,7 @@ var vertical_speed = 0.0
 var height = 0.0
 
 onready var animation_state = owner.get_node("AnimationTree").get("parameters/playback")
+onready var touch_ground_dust = preload("res://Scene/Effects/TouchGroundDust.tscn")
 
 
 func initialize(speed, velocity):
@@ -46,6 +47,9 @@ func physics_update(delta):
 	move_horizontally(delta, input_direction)
 	animate_jump_height(delta)
 	if height <= 0.0:
+		var dust = touch_ground_dust.instance()
+		get_parent().get_parent().get_parent().add_child(dust)
+		dust.global_position = owner.get_node("DustTrailPos").global_position
 		emit_signal("finished", "idle")
 
 func move_horizontally(delta, direction):
