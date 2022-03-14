@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://assets/characters/warrior/run.png" type="Texture" id=1]
 [ext_resource path="res://Script/Characters/Player.gd" type="Script" id=2]
@@ -7,6 +7,17 @@
 [ext_resource path="res://assets/characters/warrior/roll.png" type="Texture" id=5]
 [ext_resource path="res://assets/characters/warrior/jump.png" type="Texture" id=6]
 [ext_resource path="res://assets/characters/warrior/shield-block0-sheet.png" type="Texture" id=7]
+[ext_resource path="res://Script/Characters/states/combat/Defense.gd" type="Script" id=8]
+[ext_resource path="res://Script/Characters/states/motion/on_ground/Roll.gd" type="Script" id=9]
+[ext_resource path="res://Script/Characters/states/motion/on_ground/Run.gd" type="Script" id=10]
+[ext_resource path="res://Script/Characters/states/motion/on_ground/Walk.gd" type="Script" id=11]
+[ext_resource path="res://Script/Characters/states/motion/in_air/Jump.gd" type="Script" id=12]
+[ext_resource path="res://Script/Characters/states/motion/on_ground/Idle.gd" type="Script" id=13]
+[ext_resource path="res://Script/Characters/states/debug/StateNameDisplay.gd" type="Script" id=14]
+[ext_resource path="res://Script/Characters/states/combat/Attack.gd" type="Script" id=15]
+[ext_resource path="res://Script/Characters/states/combat/Kick.gd" type="Script" id=16]
+[ext_resource path="res://Script/Characters/states/combat/Hurt.gd" type="Script" id=17]
+[ext_resource path="res://Script/Characters/states/Die.gd" type="Script" id=18]
 
 [sub_resource type="CapsuleShape2D" id=6]
 radius = 5.0
@@ -16,7 +27,7 @@ height = 8.0
 resource_name = "Defense_Left"
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,7 +39,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 7 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -40,7 +51,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -52,7 +63,7 @@ tracks/2/keys = {
 "values": [ 2 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:vframes")
+tracks/3/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -64,7 +75,7 @@ tracks/3/keys = {
 "values": [ 2 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:position")
+tracks/4/path = NodePath("BodyPivot/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -76,7 +87,7 @@ tracks/4/keys = {
 "values": [ Vector2( -18, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:frame")
+tracks/5/path = NodePath("BodyPivot/Sprite:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -92,7 +103,7 @@ tracks/5/keys = {
 resource_name = "Defense_Right"
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -104,7 +115,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 7 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -116,7 +127,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -128,7 +139,7 @@ tracks/2/keys = {
 "values": [ 2 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:vframes")
+tracks/3/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -140,7 +151,7 @@ tracks/3/keys = {
 "values": [ 2 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:position")
+tracks/4/path = NodePath("BodyPivot/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -152,7 +163,7 @@ tracks/4/keys = {
 "values": [ Vector2( 18, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:frame")
+tracks/5/path = NodePath("BodyPivot/Sprite:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -169,7 +180,7 @@ resource_name = "Idle_Left"
 length = 1.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("BodyPivot/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -181,7 +192,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
+tracks/1/path = NodePath("BodyPivot/Sprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -193,7 +204,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:position")
+tracks/2/path = NodePath("BodyPivot/Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -205,7 +216,7 @@ tracks/2/keys = {
 "values": [ Vector2( -18, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:flip_h")
+tracks/3/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -217,7 +228,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:flip_v")
+tracks/4/path = NodePath("BodyPivot/Sprite:flip_v")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -229,7 +240,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:hframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -241,7 +252,7 @@ tracks/5/keys = {
 "values": [ 6 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:vframes")
+tracks/6/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -258,7 +269,7 @@ resource_name = "Idle_Right"
 length = 1.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("BodyPivot/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -270,7 +281,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
+tracks/1/path = NodePath("BodyPivot/Sprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -282,7 +293,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:position")
+tracks/2/path = NodePath("BodyPivot/Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -294,7 +305,7 @@ tracks/2/keys = {
 "values": [ Vector2( 18, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:flip_h")
+tracks/3/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -306,7 +317,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:flip_v")
+tracks/4/path = NodePath("BodyPivot/Sprite:flip_v")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -318,7 +329,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:hframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -330,7 +341,7 @@ tracks/5/keys = {
 "values": [ 6 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:vframes")
+tracks/6/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -346,7 +357,7 @@ tracks/6/keys = {
 resource_name = "Jump_Left"
 length = 1.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -358,7 +369,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -370,7 +381,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -382,7 +393,7 @@ tracks/2/keys = {
 "values": [ 14 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -394,7 +405,7 @@ tracks/3/keys = {
 "values": [ Vector2( -18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:frame")
+tracks/4/path = NodePath("BodyPivot/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -406,7 +417,7 @@ tracks/4/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -422,7 +433,7 @@ tracks/5/keys = {
 resource_name = "Jump_Right"
 length = 1.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -434,7 +445,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -446,7 +457,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -458,7 +469,7 @@ tracks/2/keys = {
 "values": [ 14 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -470,7 +481,7 @@ tracks/3/keys = {
 "values": [ Vector2( 18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:frame")
+tracks/4/path = NodePath("BodyPivot/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -482,7 +493,7 @@ tracks/4/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -497,7 +508,7 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=5]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("BodyPivot/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -509,7 +520,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
+tracks/1/path = NodePath("BodyPivot/Sprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -521,7 +532,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:position")
+tracks/2/path = NodePath("BodyPivot/Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -533,7 +544,7 @@ tracks/2/keys = {
 "values": [ Vector2( 20, -25 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:flip_h")
+tracks/3/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -545,7 +556,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:flip_v")
+tracks/4/path = NodePath("BodyPivot/Sprite:flip_v")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -557,7 +568,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:hframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -569,7 +580,7 @@ tracks/5/keys = {
 "values": [ 6 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:vframes")
+tracks/6/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -585,7 +596,7 @@ tracks/6/keys = {
 resource_name = "Roll_Left"
 length = 1.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -597,7 +608,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -609,7 +620,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -621,7 +632,7 @@ tracks/2/keys = {
 "values": [ 14 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -633,7 +644,7 @@ tracks/3/keys = {
 "values": [ Vector2( -18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:frame")
+tracks/4/path = NodePath("BodyPivot/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -645,7 +656,7 @@ tracks/4/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -661,7 +672,7 @@ tracks/5/keys = {
 resource_name = "Roll_Right"
 length = 1.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -673,7 +684,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -685,7 +696,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -697,7 +708,7 @@ tracks/2/keys = {
 "values": [ 14 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -709,7 +720,7 @@ tracks/3/keys = {
 "values": [ Vector2( 18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:frame")
+tracks/4/path = NodePath("BodyPivot/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -721,7 +732,7 @@ tracks/4/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -738,7 +749,7 @@ resource_name = "Run_Left"
 length = 1.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -750,7 +761,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -762,7 +773,7 @@ tracks/1/keys = {
 "values": [ 12 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -774,7 +785,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -786,7 +797,7 @@ tracks/3/keys = {
 "values": [ Vector2( -18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:frame")
+tracks/4/path = NodePath("BodyPivot/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -798,7 +809,7 @@ tracks/4/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -815,7 +826,7 @@ resource_name = "Run_Right"
 length = 1.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -827,7 +838,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -839,7 +850,7 @@ tracks/1/keys = {
 "values": [ 12 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -851,7 +862,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -863,7 +874,7 @@ tracks/3/keys = {
 "values": [ Vector2( 18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:frame")
+tracks/4/path = NodePath("BodyPivot/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -875,7 +886,7 @@ tracks/4/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -892,7 +903,7 @@ resource_name = "Walk_Left"
 length = 1.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -904,7 +915,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
+tracks/1/path = NodePath("BodyPivot/Sprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -916,7 +927,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("BodyPivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -928,7 +939,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -940,7 +951,7 @@ tracks/3/keys = {
 "values": [ Vector2( -18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:flip_h")
+tracks/4/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -952,7 +963,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -969,7 +980,7 @@ resource_name = "Walk_Right"
 length = 1.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/path = NodePath("BodyPivot/Sprite:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -981,7 +992,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
+tracks/1/path = NodePath("BodyPivot/Sprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -993,7 +1004,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("BodyPivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1005,7 +1016,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("BodyPivot/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1017,7 +1028,7 @@ tracks/3/keys = {
 "values": [ Vector2( 18, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:flip_h")
+tracks/4/path = NodePath("BodyPivot/Sprite:flip_h")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1029,7 +1040,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:vframes")
+tracks/5/path = NodePath("BodyPivot/Sprite:vframes")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1041,13 +1052,277 @@ tracks/5/keys = {
 "values": [ 1 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "Defense_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "Defense_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "Defense_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "Defense_Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=19]
+blend_point_0/node = SubResource( 34 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 35 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 36 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 37 )
+blend_point_3/pos = Vector2( 0, 1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Idle_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Idle_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "Idle_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "Idle_Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=24]
+blend_point_0/node = SubResource( 20 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 21 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 22 )
+blend_point_2/pos = Vector2( 0, -1.1 )
+blend_point_3/node = SubResource( 23 )
+blend_point_3/pos = Vector2( 0, 1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "Jump_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "Jump_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "Jump_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "Jump_Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=25]
+blend_point_0/node = SubResource( 38 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 39 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 40 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 41 )
+blend_point_3/pos = Vector2( 0, 1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "Roll_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "Roll_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=44]
+animation = "Roll_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=45]
+animation = "Roll_Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=27]
+blend_point_0/node = SubResource( 42 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 43 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 44 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 45 )
+blend_point_3/pos = Vector2( 0, 1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=46]
+animation = "Run_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=47]
+animation = "Run_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=48]
+animation = "Run_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=49]
+animation = "Run_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=28]
+blend_point_0/node = SubResource( 46 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 47 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 48 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 49 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "Walk_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "Walk_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "Walk_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "Walk_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=80]
+animation = "Walk_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=81]
+animation = "Walk_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=82]
+animation = "Walk_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=83]
+animation = "Walk_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=84]
+animation = "Walk_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=85]
+animation = "Walk_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=33]
+blend_point_0/node = SubResource( 29 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 30 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 31 )
+blend_point_2/pos = Vector2( 0, -1.1 )
+blend_point_3/node = SubResource( 32 )
+blend_point_3/pos = Vector2( 0, 1.1 )
+blend_point_4/node = SubResource( 80 )
+blend_point_4/pos = Vector2( -1, 0 )
+blend_point_5/node = SubResource( 81 )
+blend_point_5/pos = Vector2( 1, 0 )
+blend_point_6/node = SubResource( 82 )
+blend_point_6/pos = Vector2( -1, 0 )
+blend_point_7/node = SubResource( 83 )
+blend_point_7/pos = Vector2( 1, 0 )
+blend_point_8/node = SubResource( 84 )
+blend_point_8/pos = Vector2( -1, 0 )
+blend_point_9/node = SubResource( 85 )
+blend_point_9/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=57]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=58]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=59]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=60]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=61]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=62]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=63]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=64]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=65]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=66]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=67]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=68]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=69]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=70]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=71]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=72]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=73]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=74]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=75]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=76]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=77]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=78]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=79]
+
 [sub_resource type="AnimationNodeStateMachine" id=2]
+states/Defense/node = SubResource( 19 )
+states/Defense/position = Vector2( 18, 130 )
+states/Idle/node = SubResource( 24 )
+states/Idle/position = Vector2( 393, 218 )
+states/Jump/node = SubResource( 25 )
+states/Jump/position = Vector2( 654, 520 )
+states/Roll/node = SubResource( 27 )
+states/Roll/position = Vector2( 380, -164 )
+states/Run/node = SubResource( 28 )
+states/Run/position = Vector2( 119, 513 )
+states/Walk/node = SubResource( 33 )
+states/Walk/position = Vector2( 750, 137 )
+transitions = [ "Idle", "Walk", SubResource( 50 ), "Walk", "Idle", SubResource( 51 ), "Idle", "Run", SubResource( 52 ), "Run", "Idle", SubResource( 53 ), "Jump", "Idle", SubResource( 54 ), "Idle", "Jump", SubResource( 55 ), "Defense", "Idle", SubResource( 56 ), "Idle", "Defense", SubResource( 57 ), "Roll", "Idle", SubResource( 58 ), "Idle", "Roll", SubResource( 59 ), "Walk", "Roll", SubResource( 60 ), "Roll", "Walk", SubResource( 61 ), "Jump", "Walk", SubResource( 62 ), "Walk", "Jump", SubResource( 63 ), "Walk", "Run", SubResource( 64 ), "Run", "Walk", SubResource( 65 ), "Defense", "Run", SubResource( 66 ), "Run", "Defense", SubResource( 67 ), "Defense", "Roll", SubResource( 68 ), "Roll", "Defense", SubResource( 69 ), "Run", "Jump", SubResource( 70 ), "Jump", "Run", SubResource( 71 ), "Jump", "Roll", SubResource( 72 ), "Roll", "Jump", SubResource( 73 ), "Defense", "Jump", SubResource( 74 ), "Jump", "Defense", SubResource( 75 ), "Walk", "Defense", SubResource( 76 ), "Defense", "Walk", SubResource( 77 ), "Run", "Roll", SubResource( 78 ), "Roll", "Run", SubResource( 79 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -182.886, -203.221 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[sub_resource type="DynamicFontData" id=86]
+font_path = "res://assets/fonts/alagard.ttf"
+
+[sub_resource type="DynamicFont" id=87]
+font_data = SubResource( 86 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 4
 script = ExtResource( 2 )
+player_col = NodePath("CollisionShape2D")
+animationPlayer = NodePath("AnimationPlayer")
+animationTree = NodePath("AnimationTree")
 state_machine = NodePath("StateMachine")
 idle_state = NodePath("StateMachine/Idle")
 walk_state = NodePath("StateMachine/Walk")
@@ -1060,29 +1335,9 @@ defense_state = NodePath("StateMachine/Defense")
 hurt_state = NodePath("StateMachine/Hurt")
 die_state = NodePath("StateMachine/Die")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="BodyPivot" type="Position2D" parent="."]
 
-[node name="Idle" type="Node" parent="StateMachine"]
-
-[node name="Walk" type="Node" parent="StateMachine"]
-
-[node name="Run" type="Node" parent="StateMachine"]
-
-[node name="Jump" type="Node" parent="StateMachine"]
-
-[node name="Roll" type="Node" parent="StateMachine"]
-
-[node name="Attack" type="Node" parent="StateMachine"]
-
-[node name="Kick" type="Node" parent="StateMachine"]
-
-[node name="Defense" type="Node" parent="StateMachine"]
-
-[node name="Hurt" type="Node" parent="StateMachine"]
-
-[node name="Die" type="Node" parent="StateMachine"]
-
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="BodyPivot"]
 position = Vector2( 20, -25 )
 texture = ExtResource( 3 )
 hframes = 6
@@ -1114,3 +1369,56 @@ anims/Walk_Right = SubResource( 8 )
 tree_root = SubResource( 2 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 3 )
+parameters/Defense/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Jump/blend_position = Vector2( 0, 0 )
+parameters/Roll/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Walk/blend_position = Vector2( 0, 0 )
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 13 )
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource( 11 )
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource( 10 )
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource( 12 )
+
+[node name="Roll" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 15 )
+
+[node name="Kick" type="Node" parent="StateMachine"]
+script = ExtResource( 16 )
+
+[node name="Defense" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource( 17 )
+
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource( 18 )
+
+[node name="StateNameDisplay" type="Label" parent="."]
+margin_left = -20.0
+margin_top = -45.0
+margin_right = 20.0
+margin_bottom = -30.0
+rect_pivot_offset = Vector2( 19, 7 )
+custom_fonts/font = SubResource( 87 )
+text = "Test"
+align = 1
+valign = 1
+script = ExtResource( 14 )
+
+[connection signal="state_changed" from="." to="StateNameDisplay" method="_on_Player_state_changed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

@@ -2792,12 +2792,9 @@ format = 1
 
 [node name="Terrain" type="YSort" parent="TileMap"]
 
-[node name="levbuild_object" type="TileMap" parent="TileMap/Terrain" instance=ExtResource( 3 )]
+[node name="levbuild_object" parent="TileMap/Terrain" instance=ExtResource( 3 )]
 tile_set = SubResource( 21 )
-cell_size = Vector2( 16, 16 )
-cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 cell_y_sort = true
-format = 1
 
 [node name="terrain_red" type="TileMap" parent="TileMap/Terrain"]
 tile_set = SubResource( 22 )

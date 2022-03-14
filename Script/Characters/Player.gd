@@ -9,6 +9,11 @@ var look_direction = Vector2(1, 0) setget set_look_direction
 var states_stack = []
 var current_state = null
 
+### Player nodes:
+export (NodePath) onready var player_col = get_node(player_col) as CollisionShape2D
+export (NodePath) onready var animationPlayer = get_node(animationPlayer) as AnimationPlayer
+export (NodePath) onready var animationTree = get_node(animationTree) as AnimationTree
+
 # State Machine Node:
 export (NodePath) onready var state_machine = get_node(state_machine) as Node
 export (NodePath) onready var idle_state = get_node(idle_state) as Node
@@ -32,13 +37,17 @@ onready var states_map = {
 	"kick": kick_state,
 	"defense": defense_state,
 	"hurt": hurt_state,
-	"death": die_state,
+	"dead": die_state,
 }
 
-
 func _ready():
+	animationTree.active = true
 	for state_node in state_machine.get_children():
 		state_node.connect("finished", self, "_change_state")
+	
+	states_stack.push_front(idle_state)
+	current_state = states_stack[0]
+	_change_state("idle")
 
 
 func _physics_process(delta):
@@ -50,9 +59,33 @@ func _change_state(state_name):
 	
 	if state_name == "previous":
 		states_stack.pop_front()
+	elif state_name in ["jump", "roll", "attack", "kick", "defense"]:
+		states_stack.push_front(states_map[state_name])
+	elif state_name == "dead":
+		queue_free()
+		return
+	else:
+		var new_state = states_map[state_name]
+		states_stack[0] = new_state
 	
+	if state_name == "jump":
+		jump_state.initialize(current_state.speed, current_state.velocity)
+	current_state = states_stack[0]
+	if state_name != "previous":
+		# To not reinitialize the state if we"re going back to the previous state
+		current_state.enter()
+	emit_signal("state_changed", states_stack)
+
+func set_dead(value):
+	set_process_input(not value)
+	set_physics_process(not value)
+	player_col.disabled = value
 
 func set_look_direction(value):
 	look_direction = value
 	emit_signal("direction_changed", value)
+
+
+func _on_animation_finished(anim_name):
+	current_state._on_animation_finished(anim_name)
 
