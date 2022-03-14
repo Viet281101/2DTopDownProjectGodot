@@ -6,6 +6,7 @@ onready var animation_tree = owner.get_node("AnimationTree")
 
 func handle_input(event):
 	if event.is_action_pressed("ui_attack"):
+		print("attacking")
 		emit_signal("finished", "attack")
 
 func get_input_direction():
@@ -16,11 +17,6 @@ func get_input_direction():
 	
 
 func update_look_direction(input_vector):
-#	if direction and owner.look_direction != direction:
-#		owner.look_direction = direction
-#	if not direction.x in [-1, 1]:
-#		return
-#	owner.get_node("BodyPivot").set_scale(Vector2(direction.x, 1))
 	if input_vector != Vector2.ZERO:
 		animation_tree.set("parameters/Idle/blend_position", input_vector)
 		animation_tree.set("parameters/Walk/blend_position", input_vector)
@@ -28,3 +24,8 @@ func update_look_direction(input_vector):
 		animation_tree.set("parameters/Jump/blend_position", input_vector)
 		animation_tree.set("parameters/Roll/blend_position", input_vector)
 		animation_tree.set("parameters/Attack/blend_position", input_vector)
+		animation_tree.set("parameters/Defense/blend_position", input_vector)
+		animation_tree.set("parameters/Kick/blend_position", input_vector)
+		animation_tree.set("parameters/Hurt/blend_position", input_vector)
+	return input_vector
+
