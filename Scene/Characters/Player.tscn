@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://assets/characters/warrior/run.png" type="Texture" id=1]
 [ext_resource path="res://Script/Characters/Player.gd" type="Script" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://assets/characters/warrior/dead.png" type="Texture" id=21]
 [ext_resource path="res://assets/world/shadows/big-shadow.png" type="Texture" id=22]
 [ext_resource path="res://assets/characters/warrior/attack-A.png" type="Texture" id=23]
+[ext_resource path="res://Script/Characters/states/combat/WeaponPivot.gd" type="Script" id=24]
+[ext_resource path="res://Scene/Effects/SlashEffect.tscn" type="PackedScene" id=25]
 
 [sub_resource type="ShaderMaterial" id=132]
 shader = ExtResource( 20 )
@@ -2135,7 +2137,7 @@ transitions = [ "Idle", "Walk", SubResource( 129 ), "Walk", "Idle", SubResource(
 start_node = "Idle"
 graph_offset = Vector2( -81.7876, -225.47 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=172]
 
 [sub_resource type="DynamicFontData" id=86]
 font_path = "res://assets/fonts/alagard.ttf"
@@ -2189,6 +2191,13 @@ position = Vector2( 0, 30 )
 scale = Vector2( 1, 0.7 )
 texture = ExtResource( 22 )
 
+[node name="WeaponPivot" type="Position2D" parent="."]
+script = ExtResource( 24 )
+
+[node name="Offset" type="Position2D" parent="WeaponPivot"]
+
+[node name="SlashEffect" parent="WeaponPivot/Offset" instance=ExtResource( 25 )]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 20 )
 shape = SubResource( 88 )
@@ -2216,7 +2225,7 @@ anims/Walk_Right = SubResource( 98 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 131 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 3 )
+parameters/playback = SubResource( 172 )
 parameters/Attack_A/blend_position = Vector2( 0, 0 )
 parameters/Defense/blend_position = Vector2( 0, 0 )
 parameters/Die/blend_position = Vector2( 0, 0 )
