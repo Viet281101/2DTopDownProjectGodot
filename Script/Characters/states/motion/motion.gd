@@ -25,7 +25,7 @@ func update_look_direction(input_vector):
 		animation_tree.set("parameters/Jump/blend_position", input_vector)
 		animation_tree.set("parameters/Roll/blend_position", input_vector)
 		animation_tree.set("parameters/Dash/blend_position", input_vector)
-		animation_tree.set("parameters/Attack/blend_position", input_vector)
+		animation_tree.set("parameters/Attack_A/blend_position", input_vector)
 		animation_tree.set("parameters/Defense/blend_position", input_vector)
 		animation_tree.set("parameters/Kick/blend_position", input_vector)
 		animation_tree.set("parameters/Hurt/blend_position", input_vector)

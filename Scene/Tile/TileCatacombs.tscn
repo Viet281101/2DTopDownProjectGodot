@@ -2000,7 +2000,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 73 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-25/z_index = 0
+25/z_index = -1
 26/name = "mainlevbuild.png 26"
 26/texture = ExtResource( 4 )
 26/tex_offset = Vector2( 0, 0 )
@@ -2021,7 +2021,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 74 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-26/z_index = 0
+26/z_index = -1
 27/name = "mainlevbuild.png 27"
 27/texture = ExtResource( 4 )
 27/tex_offset = Vector2( 0, 0 )
@@ -2042,7 +2042,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 75 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-27/z_index = 0
+27/z_index = -1
 28/name = "mainlevbuild.png 28"
 28/texture = ExtResource( 4 )
 28/tex_offset = Vector2( 0, 0 )
@@ -2063,7 +2063,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 76 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-28/z_index = 0
+28/z_index = -1
 29/name = "mainlevbuild.png 29"
 29/texture = ExtResource( 4 )
 29/tex_offset = Vector2( 0, 0 )
@@ -2084,7 +2084,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 77 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-29/z_index = 0
+29/z_index = -1
 30/name = "mainlevbuild.png 30"
 30/texture = ExtResource( 4 )
 30/tex_offset = Vector2( 0, 0 )

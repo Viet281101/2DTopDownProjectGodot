@@ -13,6 +13,7 @@ var current_state = null
 export (NodePath) onready var player_col = get_node(player_col) as CollisionShape2D
 export (NodePath) onready var body_pivot = get_node(body_pivot) as Position2D
 export (NodePath) onready var dust_trail_pos = get_node(dust_trail_pos) as Position2D
+export (NodePath) onready var player_shadow = get_node(player_shadow) as Sprite
 export (NodePath) onready var animationPlayer = get_node(animationPlayer) as AnimationPlayer
 export (NodePath) onready var animationTree = get_node(animationTree) as AnimationTree
 
