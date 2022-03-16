@@ -2148,6 +2148,9 @@ font_data = SubResource( 86 )
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 4
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 player_col = NodePath("CollisionShape2D")
 body_pivot = NodePath("BodyPivot")
 dust_trail_pos = NodePath("DustTrailPos")
