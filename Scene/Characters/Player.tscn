@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=2]
+[gd_scene load_steps=145 format=2]
 
 [ext_resource path="res://assets/characters/warrior/run.png" type="Texture" id=1]
 [ext_resource path="res://Script/Characters/Player.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://assets/characters/warrior/attack-A.png" type="Texture" id=23]
 [ext_resource path="res://Script/Characters/states/combat/WeaponPivot.gd" type="Script" id=24]
 [ext_resource path="res://Scene/Effects/SlashEffect.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scene/Characters/Health/Health.tscn" type="PackedScene" id=26]
 
 [sub_resource type="ShaderMaterial" id=132]
 shader = ExtResource( 20 )
@@ -2157,6 +2158,7 @@ dust_trail_pos = NodePath("DustTrailPos")
 player_shadow = NodePath("player_shadow")
 animationPlayer = NodePath("AnimationPlayer")
 animationTree = NodePath("AnimationTree")
+health = NodePath("Health")
 state_machine = NodePath("StateMachine")
 idle_state = NodePath("StateMachine/Idle")
 walk_state = NodePath("StateMachine/Walk")
@@ -2237,6 +2239,8 @@ parameters/Jump/blend_position = Vector2( 0, 0 )
 parameters/Roll/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
+
+[node name="Health" parent="." instance=ExtResource( 26 )]
 
 [node name="StateMachine" type="Node" parent="."]
 

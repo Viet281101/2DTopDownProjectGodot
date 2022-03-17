@@ -17,6 +17,7 @@ export (NodePath) onready var dust_trail_pos = get_node(dust_trail_pos) as Posit
 export (NodePath) onready var player_shadow = get_node(player_shadow) as Sprite
 export (NodePath) onready var animationPlayer = get_node(animationPlayer) as AnimationPlayer
 export (NodePath) onready var animationTree = get_node(animationTree) as AnimationTree
+export (NodePath) onready var health = get_node(health) as Node
 
 ### State Machine Node:
 export (NodePath) onready var state_machine = get_node(state_machine) as Node
@@ -109,5 +110,5 @@ func take_damage(attacker, amount, effect=null):
 	if self.is_a_parent_of(attacker):
 		return
 	hurt_state.knockback_direction = (attacker.global_position - global_position).normalized()
-	
+	health.take_damage(amount, effect)
 
