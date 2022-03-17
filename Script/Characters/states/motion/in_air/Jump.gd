@@ -39,6 +39,7 @@ func enter():
 	vertical_speed = 600.0
 	
 	animation_state.travel("Jump")
+	Global.on_ground = false
 
 func physics_update(delta):
 	var input_direction = get_input_direction()

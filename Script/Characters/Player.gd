@@ -1,3 +1,4 @@
+
 extends KinematicBody2D
 class_name Player
 
@@ -9,7 +10,7 @@ var look_direction = Vector2(1, 0) setget set_look_direction
 var states_stack = []
 var current_state = null
 
-### Player nodes:
+##### Player nodes:
 export (NodePath) onready var player_col = get_node(player_col) as CollisionShape2D
 export (NodePath) onready var body_pivot = get_node(body_pivot) as Position2D
 export (NodePath) onready var dust_trail_pos = get_node(dust_trail_pos) as Position2D
@@ -17,7 +18,7 @@ export (NodePath) onready var player_shadow = get_node(player_shadow) as Sprite
 export (NodePath) onready var animationPlayer = get_node(animationPlayer) as AnimationPlayer
 export (NodePath) onready var animationTree = get_node(animationTree) as AnimationTree
 
-# State Machine Node:
+### State Machine Node:
 export (NodePath) onready var state_machine = get_node(state_machine) as Node
 export (NodePath) onready var idle_state = get_node(idle_state) as Node
 export (NodePath) onready var walk_state = get_node(walk_state) as Node
@@ -81,6 +82,8 @@ func _change_state(state_name):
 		var new_state = states_map[state_name]
 		states_stack[0] = new_state
 	
+	if state_name == "attack":
+		pass
 	if state_name == "jump":
 		jump_state.initialize(current_state.speed, current_state.velocity)
 	
@@ -99,7 +102,12 @@ func set_look_direction(value):
 	look_direction = value
 	emit_signal("direction_changed", value)
 
-
 func _on_animation_finished(anim_name):
 	current_state._on_animation_finished(anim_name)
+
+func take_damage(attacker, amount, effect=null):
+	if self.is_a_parent_of(attacker):
+		return
+	hurt_state.knockback_direction = (attacker.global_position - global_position).normalized()
+	
 

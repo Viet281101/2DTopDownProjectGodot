@@ -5,6 +5,7 @@ onready var animation_state = owner.get_node("AnimationTree").get("parameters/pl
 
 func enter():
 	animation_state.travel("Idle")
+	Global.on_ground = true
 
 func handle_input(event):
 	return .handle_input(event)

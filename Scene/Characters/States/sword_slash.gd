@@ -28,5 +28,29 @@ var combo = [{
 		'effect': null
 	}]
 
+var hit_objects = []
+
 func _ready():
-	pass
+	$AnimationPlayer.connect('animation_finished', self, "_on_animation_finished")
+	self.connect("body_entered", self, "_on_body_entered")
+	_change_state(STATES.IDLE)
+
+func _change_state(new_state):
+	match state:
+		STATES.ATTACK:
+			hit_objects = []
+			attack_input_state = ATTACK_INPUT_STATES.IDLE
+			ready_for_next_attack = false
+
+	match new_state:
+		STATES.IDLE:
+			combo_count = 0
+			$AnimationPlayer.stop()
+			visible = false
+			monitoring = false
+		STATES.ATTACK:
+			attack_current = combo[combo_count -1]
+			$AnimationPlayer.play(attack_current['animation'])
+			visible = true
+			monitoring = true
+	state = new_state
