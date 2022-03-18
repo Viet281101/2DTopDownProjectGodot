@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://Script/Characters/Actor.gd"
+}, {
 "base": "Node2D",
 "class": "AnimationEffect",
 "language": "GDScript",
@@ -24,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Characters/states/motion/on_ground/on_ground.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Actor",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Script/Characters/Player.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://Script/Characters/states/state.gd"
 } ]
 _global_script_class_icons={
+"Actor": "",
 "AnimationEffect": "",
 "Motion": "",
 "OnGround": "",

@@ -1,11 +1,9 @@
 
-extends KinematicBody2D
+extends Actor
 class_name Player
 
 signal state_changed
-signal direction_changed(new_direction)
 
-var look_direction = Vector2(1, 0) setget set_look_direction
 
 var states_stack = []
 var current_state = null
@@ -13,11 +11,11 @@ var current_state = null
 ##### Player nodes:
 export (NodePath) onready var player_col = get_node(player_col) as CollisionShape2D
 export (NodePath) onready var body_pivot = get_node(body_pivot) as Position2D
+export (NodePath) onready var body = get_node(body) as Sprite
 export (NodePath) onready var dust_trail_pos = get_node(dust_trail_pos) as Position2D
 export (NodePath) onready var player_shadow = get_node(player_shadow) as Sprite
 export (NodePath) onready var animationPlayer = get_node(animationPlayer) as AnimationPlayer
 export (NodePath) onready var animationTree = get_node(animationTree) as AnimationTree
-export (NodePath) onready var health = get_node(health) as Node
 
 ### State Machine Node:
 export (NodePath) onready var state_machine = get_node(state_machine) as Node
@@ -56,6 +54,9 @@ func _ready():
 	current_state = states_stack[0]
 	_change_state("idle")
 
+func get_body():
+	return body
+
 func _process(delta):
 	current_state.update(delta)
 
@@ -68,6 +69,12 @@ func _physics_process(delta):
 
 func _input(event):
 	current_state.handle_input(event)
+	if event.is_action_pressed('ui_attack'):
+		if current_state in [attack_state, hurt_state]:
+			return
+		_change_state('attack')
+		get_tree().set_input_as_handled()
+		return
 
 func _change_state(state_name):
 	current_state.exit()
@@ -77,7 +84,6 @@ func _change_state(state_name):
 	elif state_name in ["jump", "roll", "dash", "attack", "kick", "defense"]:
 		states_stack.push_front(states_map[state_name])
 	elif state_name == "dead":
-		queue_free()
 		return
 	else:
 		var new_state = states_map[state_name]
@@ -94,21 +100,17 @@ func _change_state(state_name):
 		current_state.enter()
 	emit_signal("state_changed", states_stack)
 
-func set_dead(value):
-	set_process_input(not value)
-	set_physics_process(not value)
-	player_col.disabled = value
+func reset(target_global_position):
+	.reset(target_global_position)
 
-func set_look_direction(value):
-	look_direction = value
-	emit_signal("direction_changed", value)
+func take_damage_from(damage_source):
+	if state_machine.current_state == hurt_state:
+		return
+	.take_damage_from(damage_source)
+	hurt_state.knockback_direction = (damage_source.global_position - global_position).normalized()
 
 func _on_animation_finished(anim_name):
 	current_state._on_animation_finished(anim_name)
 
-func take_damage(attacker, amount, effect=null):
-	if self.is_a_parent_of(attacker):
-		return
-	hurt_state.knockback_direction = (attacker.global_position - global_position).normalized()
-	health.take_damage(amount, effect)
-
+func _on_Die_finished(next_state_name):
+	set_dead(true)
