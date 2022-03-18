@@ -23,6 +23,7 @@ export (NodePath) onready var idle_state = get_node(idle_state) as Node
 export (NodePath) onready var walk_state = get_node(walk_state) as Node
 export (NodePath) onready var run_state = get_node(run_state) as Node
 export (NodePath) onready var jump_state = get_node(jump_state) as Node
+export (NodePath) onready var jump_attack_state = get_node(jump_attack_state) as Node
 export (NodePath) onready var roll_state = get_node(roll_state) as Node
 export (NodePath) onready var dash_state = get_node(dash_state) as Node
 export (NodePath) onready var attack_state = get_node(attack_state) as Node
@@ -36,6 +37,7 @@ onready var states_map = {
 	"walk": walk_state,
 	"run": run_state,
 	"jump": jump_state,
+	"jump_attack": jump_attack_state,
 	"roll": roll_state,
 	"dash": dash_state,
 	"attack": attack_state,
@@ -65,28 +67,23 @@ func _physics_process(delta):
 	
 	Global.is_dashing = dash_state.is_dashing()
 	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
-	player_col.global_position = body_pivot.global_position + Vector2(0, 20)
+	player_col.global_position = body_pivot.global_position + Vector2(0, 26)
+	player_col.rotation_degrees = 90
 
 func _input(event):
 	current_state.handle_input(event)
-	if event.is_action_pressed('ui_attack'):
-		if current_state in [attack_state, hurt_state]:
-			return
-		_change_state('attack')
-		get_tree().set_input_as_handled()
-		return
 
 func _change_state(state_name):
 	current_state.exit()
 	
 	if state_name == "previous":
 		states_stack.pop_front()
-	elif state_name in ["jump", "roll", "dash", "attack", "kick", "defense"]:
+	elif state_name in ["jump", "roll", "dash", "attack", "kick", "defense", "jump_attack"]:
 		states_stack.push_front(states_map[state_name])
 	elif state_name == "dead":
 		return
 	else:
-		var new_state = states_map[state_name]
+		var new_state = states_map[state_name]  
 		states_stack[0] = new_state
 	
 	if state_name == "attack":

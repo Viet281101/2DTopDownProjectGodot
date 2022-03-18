@@ -26,7 +26,12 @@ var combo = [{
 		'damage': 3,
 		'animation': 'Attack_C',
 		'effect': null
-	}]
+	},
+	{
+		'damage': 4,
+		'animation': 'Attack_D',
+		'effect': null
+	},]
 
 var hit_objects = []
 

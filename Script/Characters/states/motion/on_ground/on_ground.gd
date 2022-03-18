@@ -7,6 +7,8 @@ var speed = 0.0
 var velocity = Vector2()
 
 func handle_input(event):
+	if event.is_action_pressed("ui_attack"):
+		emit_signal("finished", "attack")
 	if event.is_action_pressed("ui_jump"):
 		emit_signal("finished", "jump")
 	if event.is_action_pressed("ui_roll"):
