@@ -1,7 +1,6 @@
 extends KinematicBody2D
 class_name Actor
 
-
 signal direction_changed(new_direction)
 signal position_changed(new_position)
 signal died()

@@ -4,7 +4,6 @@ class_name Player
 
 signal state_changed
 
-
 var states_stack = []
 var current_state = null
 
@@ -87,7 +86,7 @@ func _change_state(state_name):
 		states_stack[0] = new_state
 	
 	if state_name == "attack":
-		pass
+		$WeaponPivot/Offset/SlashEffect.attack()
 	if state_name == "jump":
 		jump_state.initialize(current_state.speed, current_state.velocity)
 	

@@ -4960,6 +4960,7 @@ valign = 1
 script = ExtResource( 14 )
 
 [connection signal="state_changed" from="." to="StateNameDisplay" method="_on_Player_state_changed"]
+[connection signal="attack_finished" from="WeaponPivot/Offset/SlashEffect" to="StateMachine/Attack" method="_on_SlashEffect_attack_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="finished" from="StateMachine/Die" to="." method="_on_Die_finished"]
 

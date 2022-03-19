@@ -14,3 +14,4 @@ func _on_Parent_direction_changed(direction):
 			z_index = z_index_start - 1
 		_:
 			z_index = z_index_start
+

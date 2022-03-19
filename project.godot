@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Characters/Actor.gd"
 }, {
-"base": "Node2D",
-"class": "AnimationEffect",
-"language": "GDScript",
-"path": "res://Script/Effects/Animate_Effectt.gd"
-}, {
 "base": "State",
 "class": "Motion",
 "language": "GDScript",
@@ -41,7 +36,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
-"AnimationEffect": "",
 "Motion": "",
 "OnGround": "",
 "Player": "",

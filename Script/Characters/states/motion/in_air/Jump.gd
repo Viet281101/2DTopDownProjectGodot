@@ -50,6 +50,7 @@ func physics_update(delta):
 	if height <= 0.0:
 		var dust = touch_ground_dust.instance()
 		get_parent().get_parent().get_parent().add_child(dust)
+		dust.type_count = 0
 		dust.global_position = owner.get_node("DustTrailPos").global_position
 		emit_signal("finished", "idle")
 

@@ -74,6 +74,7 @@ func _physics_process(delta):
 
 func attack():
 	combo_count += 1
+	yield(get_tree().create_timer(0.5), "timeout")
 	_change_state(STATES.ATTACK)
 
 # use with AnimationPlayer func track
