@@ -6,12 +6,9 @@ var dust_type = {
 	1: "attack_dust",
 }
 
-var type_count = 0
-
-func _ready():
-	$AnimationPlayer.play(dust_type[type_count])
-
 func _process(_delta):
 	yield($AnimationPlayer, "animation_finished")
 	queue_free()
 
+func animate(type):
+	$AnimationPlayer.play(dust_type[type])

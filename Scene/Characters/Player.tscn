@@ -4836,6 +4836,7 @@ hframes = 6
 vframes = 2
 
 [node name="SpriteWithWeapon" type="Sprite" parent="BodyPivot"]
+visible = false
 position = Vector2( 18, 0 )
 texture = ExtResource( 23 )
 hframes = 7
