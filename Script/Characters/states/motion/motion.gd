@@ -6,7 +6,7 @@ onready var animation_tree = owner.get_node("AnimationTree")
 
 func handle_input(event):
 	if event.is_action_pressed("ui_attack") && !Global.on_ground:
-		emit_signal("finished", "jump_attack")
+		emit_signal("finished", "attack")
 	if event.is_action_pressed("ui_dash") && Global.can_dash && !Global.is_dashing:
 		emit_signal("finished", "dash")
 

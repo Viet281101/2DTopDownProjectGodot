@@ -52,7 +52,11 @@ func physics_update(delta):
 		get_parent().get_parent().get_parent().add_child(dust)
 		dust.animate(0)
 		dust.global_position = owner.get_node("DustTrailPos").global_position
-		emit_signal("finished", "idle")
+		if not input_direction:
+			animation_state.travel("Idle")
+		if input_direction:
+			animation_state.travel("Walk")
+		emit_signal("finished", "previous")
 
 func move_horizontally(delta, direction):
 	if direction:

@@ -2,8 +2,6 @@
 extends Actor
 class_name Player
 
-signal state_changed
-
 var states_stack = []
 var current_state = null
 
@@ -22,7 +20,6 @@ export (NodePath) onready var idle_state = get_node(idle_state) as Node
 export (NodePath) onready var walk_state = get_node(walk_state) as Node
 export (NodePath) onready var run_state = get_node(run_state) as Node
 export (NodePath) onready var jump_state = get_node(jump_state) as Node
-export (NodePath) onready var jump_attack_state = get_node(jump_attack_state) as Node
 export (NodePath) onready var roll_state = get_node(roll_state) as Node
 export (NodePath) onready var dash_state = get_node(dash_state) as Node
 export (NodePath) onready var attack_state = get_node(attack_state) as Node
@@ -36,7 +33,6 @@ onready var states_map = {
 	"walk": walk_state,
 	"run": run_state,
 	"jump": jump_state,
-	"jump_attack": jump_attack_state,
 	"roll": roll_state,
 	"dash": dash_state,
 	"attack": attack_state,
@@ -77,7 +73,7 @@ func _change_state(state_name):
 	
 	if state_name == "previous":
 		states_stack.pop_front()
-	elif state_name in ["jump", "roll", "dash", "attack", "kick", "defense", "jump_attack"]:
+	elif state_name in ["jump", "roll", "dash", "attack", "kick", "defense"]:
 		states_stack.push_front(states_map[state_name])
 	elif state_name == "dead":
 		return
@@ -94,7 +90,7 @@ func _change_state(state_name):
 	if state_name != "previous":
 		# To not reinitialize the state if we"re going back to the previous state
 		current_state.enter()
-	emit_signal("state_changed", states_stack)
+	Global.emit_signal("state_changed", states_stack)
 
 func reset(target_global_position):
 	.reset(target_global_position)

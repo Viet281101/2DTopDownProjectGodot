@@ -7,11 +7,15 @@ func _ready():
 	Global.connect("attack_finished", self, "_on_SlashEffect_attack_finished")
 
 func enter():
-	animation_state.travel("Attack_A")
+	var type_dust = 1
+	if Global.on_ground:
+		animation_state.travel("Attack_A")
+	if !Global.on_ground:
+		animation_state.travel("Jump_Attack")
 	yield(get_tree().create_timer(0.2), "timeout")
 	var dust = touch_ground_dust.instance()
 	get_parent().get_parent().get_parent().add_child(dust)
-	dust.animate(1)
+	dust.animate(type_dust)
 	dust.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -17)
 
 func _on_SlashEffect_attack_finished():

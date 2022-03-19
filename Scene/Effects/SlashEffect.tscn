@@ -339,7 +339,7 @@ tracks/13/keys = {
 "values": [ Color( 1, 0.890196, 0.713726, 1 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=5]
 
 [node name="SlashEffect" type="Area2D"]
 collision_layer = 16
@@ -364,4 +364,4 @@ anims/RESET = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -27, -58 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )

@@ -4,6 +4,7 @@ extends Label
 var start_position = Vector2()
 
 func _ready():
+	Global.connect("state_changed", self, "_on_Player_state_changed")
 	start_position = rect_position
 
 func _physics_process(delta):
