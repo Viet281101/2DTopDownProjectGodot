@@ -3,6 +3,9 @@ extends Motion
 onready var animation_state = owner.get_node("AnimationTree").get("parameters/playback")
 onready var touch_ground_dust = preload("res://Scene/Effects/TouchGroundDust.tscn")
 
+func _ready():
+	Global.connect("attack_finished", self, "_on_SlashEffect_attack_finished")
+
 func enter():
 	animation_state.travel("Attack_A")
 	yield(get_tree().create_timer(0.2), "timeout")

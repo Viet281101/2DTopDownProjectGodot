@@ -31,10 +31,6 @@ func physics_update(delta):
 	dust_trail.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -16)
 	dust_burst.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -16)
 	
-	if not input_direction:
-		animation_state.travel("Idle")
-		emit_signal("finished", "previous")
-	
 
 func instance_ghost():
 	var ghost : Sprite = ghost_scene.instance()
@@ -74,11 +70,17 @@ func end_dash():
 	
 	Global.can_dash = false
 	yield(get_tree().create_timer(dash_delay), "timeout")
+	var input_direction = get_input_direction()
+	update_look_direction(input_direction)
+	if not input_direction:
+		animation_state.travel("Idle")
+	if input_direction:
+		animation_state.travel("Walk")
+	emit_signal("finished", "previous")
 	Global.can_dash = true
 
 func _on_DurationTimer_timeout():
 	end_dash()
-
 
 func _on_GhostTimer_timeout():
 	instance_ghost()

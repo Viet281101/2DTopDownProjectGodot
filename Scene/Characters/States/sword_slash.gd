@@ -1,6 +1,6 @@
 extends Area2D
 
-signal attack_finished
+#signal attack_finished
 
 enum STATES { IDLE, ATTACK }
 var state = null
@@ -101,7 +101,7 @@ func _on_animation_finished(name):
 		attack()
 	else:
 		_change_state(STATES.IDLE)
-		emit_signal("attack_finished")
+		Global.emit_signal("attack_finished")
 
 func _on_StateMachine_state_changed(current_state):
 	if current_state.name == "attack":
