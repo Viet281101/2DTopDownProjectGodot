@@ -1,7 +1,5 @@
 extends Area2D
 
-#signal attack_finished
-
 enum STATES { IDLE, ATTACK }
 var state = null
 

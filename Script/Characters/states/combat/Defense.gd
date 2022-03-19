@@ -1,4 +1,4 @@
-extends State
+extends Motion
 
 
 func _ready():
