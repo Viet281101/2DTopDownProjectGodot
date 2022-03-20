@@ -8,6 +8,7 @@ var is_dashing
 var on_ground
 var sword_count = 0
 var sword_time_count = 2
+var state_active
 
 ###################### NODE ####################
 export (NodePath) onready var sword_time = get_node(sword_time) as Timer
@@ -29,3 +30,8 @@ func _process(delta):
 func _on_SwordTime_timeout():
 	sword_count = 0
 	sword_time.stop()
+
+func state_cooldown(cooldown):
+	state_active = false
+	yield(get_tree().create_timer(cooldown), "timeout")
+	state_active = true

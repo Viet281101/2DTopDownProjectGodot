@@ -43,6 +43,7 @@ onready var states_map = {
 }
 
 func _ready():
+	Global.state_active = true
 	animationTree.active = true
 	for state_node in state_machine.get_children():
 		state_node.connect("finished", self, "_change_state")
@@ -55,10 +56,12 @@ func get_body():
 	return body
 
 func _process(delta):
-	current_state.update(delta)
+	if Global.state_active:
+		current_state.update(delta)
 
 func _physics_process(delta):
-	current_state.physics_update(delta)
+	if Global.state_active:
+		current_state.physics_update(delta)
 	
 	Global.is_dashing = dash_state.is_dashing()
 	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
@@ -66,7 +69,8 @@ func _physics_process(delta):
 	player_col.rotation_degrees = 90
 
 func _input(event):
-	current_state.handle_input(event)
+	if Global.state_active:
+		current_state.handle_input(event)
 
 func _change_state(state_name):
 	current_state.exit()
