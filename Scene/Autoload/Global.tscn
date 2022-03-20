@@ -5,8 +5,5 @@
 [node name="Global" type="Node"]
 script = ExtResource( 1 )
 sword_time = NodePath("sword_combo")
-stay_atk_time = NodePath("stay_attack")
 
 [node name="sword_combo" type="Timer" parent="."]
-
-[node name="stay_attack" type="Timer" parent="."]

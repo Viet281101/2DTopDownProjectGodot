@@ -27,7 +27,7 @@ func _ready():
 	Global.connect("attack_finished", self, "_on_SlashEffect_attack_finished")
 
 func enter():
-	var type_dust = 1
+	var slash_dust = 1
 	if Global.on_ground:
 		attack(Global.sword_count)
 	if !Global.on_ground:
@@ -36,7 +36,7 @@ func enter():
 	yield(get_tree().create_timer(0.2), "timeout")
 	var dust = touch_ground_dust.instance()
 	get_parent().get_parent().get_parent().add_child(dust)
-	dust.animate(type_dust)
+	dust.animate(slash_dust)
 	dust.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -17)
 
 func _on_SlashEffect_attack_finished():

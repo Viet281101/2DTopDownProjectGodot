@@ -67,9 +67,6 @@ func _physics_process(delta):
 	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
 	player_col.global_position = body_pivot.global_position + Vector2(0, 26)
 	player_col.rotation_degrees = 90
-	
-	if current_state.get_name() == "attack" && Global.back_to_idle:
-		_change_state("idle")
 
 func _input(event):
 	if Global.state_active:
