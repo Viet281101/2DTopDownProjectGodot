@@ -263,6 +263,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Color( 1, 0.890196, 0.713726, 1 ) ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("Slash:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack_C"
@@ -387,6 +399,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Color( 1, 0.890196, 0.713726, 1 ) ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("Slash:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "Attack_D"
@@ -510,6 +534,18 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 0.890196, 0.713726, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Slash:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -636,7 +672,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -27, -58 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("CollisionShape2D:scale")
@@ -660,7 +696,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Slash:visible")
@@ -750,5 +786,5 @@ anims/Idle = SubResource( 4 )
 anims/RESET = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -27, -58 )
 shape = SubResource( 5 )
+disabled = true

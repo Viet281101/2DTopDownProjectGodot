@@ -8,6 +8,7 @@ var is_dashing
 var on_ground
 var sword_count = 0
 var sword_time_count = 2
+var attack_cooldown = 1
 var state_active
 
 ###################### NODE ####################
@@ -34,3 +35,4 @@ func state_cooldown(cooldown):
 	state_active = false
 	yield(get_tree().create_timer(cooldown), "timeout")
 	state_active = true
+

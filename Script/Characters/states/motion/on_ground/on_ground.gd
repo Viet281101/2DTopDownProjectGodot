@@ -12,7 +12,7 @@ func enter():
 func handle_input(event):
 	if event.is_action_pressed("ui_attack"):
 		emit_signal("finished", "attack")
-		yield(get_tree().create_timer(0.7), "timeout")
+		yield(get_tree().create_timer(Global.attack_cooldown), "timeout")
 	if event.is_action_pressed("ui_jump"):
 		emit_signal("finished", "jump")
 	if event.is_action_pressed("ui_roll"):
