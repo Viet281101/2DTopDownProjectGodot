@@ -6,6 +6,9 @@ extends Motion
 var speed = 0.0
 var velocity = Vector2()
 
+func enter():
+	Global.on_ground = true
+
 func handle_input(event):
 	if event.is_action_pressed("ui_attack"):
 		emit_signal("finished", "attack")
