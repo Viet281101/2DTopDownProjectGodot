@@ -22,3 +22,7 @@ func set_look_direction(value):
 
 func reset(target_global_position):
 	global_position = target_global_position
+
+func _exit_tree():
+	queue_free()
+

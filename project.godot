@@ -44,7 +44,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Gift for my Lord"
+config/name="Undead Emperor"
+config/description="At the ancient ruins below the abandoned castle, that was the residence of the ancient kingdom. It is a place where death is worshiped above all their gods."
 run/main_scene="res://Main.tscn"
 config/icon="res://murray.png"
 
@@ -136,9 +137,9 @@ ui_roll={
 2d_physics/layer_2="Object"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemy"
-2d_physics/layer_5="HitBox"
-2d_physics/layer_6="PlayerHurtBox"
-2d_physics/layer_7="EnemyHurtBox"
+2d_physics/layer_5="HitBoxPlayer"
+2d_physics/layer_6="HitBoxEnemy"
+2d_physics/layer_7="Weapon"
 
 [physics]
 

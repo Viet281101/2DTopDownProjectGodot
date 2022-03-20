@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/UI/Camera.gd" type="Script" id=1]
+[ext_resource path="res://assets/world/shadows/light.png" type="Texture" id=2]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2( 187, 106 )
+current = true
+zoom = Vector2( 6, 6 )
+smoothing_enabled = true
+script = ExtResource( 1 )
+topLeft = NodePath("Limit/TopLeft")
+bottomRight = NodePath("Limit/BottomRight")
+light = NodePath("Light2D")
+timer = NodePath("Timer")
+tween = NodePath("Tween")
+
+[node name="Limit" type="Node" parent="."]
+
+[node name="TopLeft" type="Position2D" parent="Limit"]
+position = Vector2( -0.239975, 0.0776443 )
+
+[node name="BottomRight" type="Position2D" parent="Limit"]
+position = Vector2( 374.25, 212.25 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+texture = ExtResource( 2 )
+energy = 0.5
+shadow_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
