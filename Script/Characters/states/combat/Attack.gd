@@ -2,7 +2,6 @@ extends Motion
 
 onready var animation_state = owner.get_node("AnimationTree").get("parameters/playback")
 onready var touch_ground_dust = preload("res://Scene/Effects/TouchGroundDust.tscn")
-var attacked = false
 var combo = [{
 		'damage': 1,
 		'animation': 'Attack_A',
@@ -28,7 +27,6 @@ func _ready():
 	Global.connect("attack_finished", self, "_on_SlashEffect_attack_finished")
 
 func enter():
-	attacked = true
 	var type_dust = 1
 	if Global.on_ground:
 		attack(Global.sword_count)
@@ -40,18 +38,6 @@ func enter():
 	get_parent().get_parent().get_parent().add_child(dust)
 	dust.animate(type_dust)
 	dust.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -17)
-
-func physics_update(delta):
-	var input_direction = get_input_direction()
-	if attacked:
-		yield(get_tree().create_timer(2.5), "timeout")
-		update_look_direction(input_direction)
-		if not input_direction:
-			animation_state.travel("Idle")
-		if input_direction:
-			animation_state.travel("Walk")
-		emit_signal("finished", "idle")
-		attacked = false
 
 func _on_SlashEffect_attack_finished():
 	var input_direction = get_input_direction()
