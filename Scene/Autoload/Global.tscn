@@ -7,5 +7,3 @@ script = ExtResource( 1 )
 sword_time = NodePath("sword_combo")
 
 [node name="sword_combo" type="Timer" parent="."]
-
-[node name="attack_timer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=287 format=2]
+[gd_scene load_steps=321 format=2]
 
 [ext_resource path="res://assets/characters/warrior/run.png" type="Texture" id=1]
 [ext_resource path="res://Script/Characters/Player.gd" type="Script" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://assets/characters/warrior/attack-D.png" type="Texture" id=31]
 [ext_resource path="res://assets/characters/warrior/jump-attack.png" type="Texture" id=32]
 [ext_resource path="res://assets/characters/warrior/hit.png" type="Texture" id=33]
+[ext_resource path="res://assets/characters/warrior/kick.png" type="Texture" id=34]
 
 [sub_resource type="ShaderMaterial" id=132]
 shader = ExtResource( 20 )
@@ -3721,6 +3722,350 @@ tracks/12/keys = {
 "values": [ Vector2( 18, 0 ) ]
 }
 
+[sub_resource type="Animation" id=315]
+resource_name = "Kick_Left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 34 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BodyPivot/Sprite:flip_v")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BodyPivot/Sprite:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BodyPivot/Sprite:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BodyPivot/Sprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("BodyPivot/Sprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -18, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("BodyPivot/SpriteWithWeapon:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("BodyPivot/SpriteWithWeapon:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 34 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("BodyPivot/SpriteWithWeapon:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("BodyPivot/SpriteWithWeapon:flip_v")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("BodyPivot/SpriteWithWeapon:hframes")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("BodyPivot/SpriteWithWeapon:vframes")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("BodyPivot/SpriteWithWeapon:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -18, 0 ) ]
+}
+
+[sub_resource type="Animation" id=314]
+resource_name = "Kick_Right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 34 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPivot/Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BodyPivot/Sprite:flip_v")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BodyPivot/Sprite:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BodyPivot/Sprite:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BodyPivot/Sprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("BodyPivot/Sprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 18, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("BodyPivot/SpriteWithWeapon:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("BodyPivot/SpriteWithWeapon:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 34 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("BodyPivot/SpriteWithWeapon:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("BodyPivot/SpriteWithWeapon:flip_v")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("BodyPivot/SpriteWithWeapon:hframes")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("BodyPivot/SpriteWithWeapon:vframes")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("BodyPivot/SpriteWithWeapon:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 18, 0 ) ]
+}
+
 [sub_resource type="Animation" id=93]
 length = 0.001
 tracks/0/type = "value"
@@ -5203,6 +5548,31 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=316]
+animation = "Kick_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=317]
+animation = "Kick_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=318]
+animation = "Kick_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=319]
+animation = "Kick_Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=320]
+blend_point_0/node = SubResource( 316 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 317 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 318 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 319 )
+blend_point_3/pos = Vector2( 0, 1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
 [sub_resource type="AnimationNodeAnimation" id=114]
 animation = "Roll_Left"
 
@@ -5592,13 +5962,65 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=313]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=321]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=322]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=323]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=324]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=325]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=326]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=327]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=328]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=329]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=330]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=331]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=332]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=333]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=334]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=335]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=336]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=337]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=338]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=339]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=340]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=341]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=342]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=343]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=344]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=345]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=346]
+
 [sub_resource type="AnimationNodeStateMachine" id=131]
 states/Attack_A/node = SubResource( 158 )
 states/Attack_A/position = Vector2( 877.68, -249.056 )
 states/Attack_B/node = SubResource( 179 )
 states/Attack_B/position = Vector2( 1299.21, -103.47 )
 states/Attack_C/node = SubResource( 201 )
-states/Attack_C/position = Vector2( 1416.23, 397.479 )
+states/Attack_C/position = Vector2( 1446.23, 303.479 )
 states/Attack_D/node = SubResource( 227 )
 states/Attack_D/position = Vector2( 1259.57, 655.714 )
 states/Defense/node = SubResource( 103 )
@@ -5606,24 +6028,26 @@ states/Defense/position = Vector2( 18, 130 )
 states/Die/node = SubResource( 139 )
 states/Die/position = Vector2( 985.11, 267.779 )
 states/Hurt_1/node = SubResource( 262 )
-states/Hurt_1/position = Vector2( -169.225, -315.692 )
+states/Hurt_1/position = Vector2( 181.775, -304.692 )
 states/Hurt_2/node = SubResource( 267 )
-states/Hurt_2/position = Vector2( -363, -5.69217 )
+states/Hurt_2/position = Vector2( -28, -195.692 )
 states/Idle/node = SubResource( 108 )
 states/Idle/position = Vector2( 393, 218 )
 states/Jump/node = SubResource( 113 )
 states/Jump/position = Vector2( 877.68, 704.714 )
 states/Jump_Attack/node = SubResource( 249 )
 states/Jump_Attack/position = Vector2( 293.763, 668.714 )
+states/Kick/node = SubResource( 320 )
+states/Kick/position = Vector2( -155.152, 345.771 )
 states/Roll/node = SubResource( 118 )
 states/Roll/position = Vector2( 380, -164 )
 states/Run/node = SubResource( 123 )
 states/Run/position = Vector2( 119, 513 )
 states/Walk/node = SubResource( 128 )
 states/Walk/position = Vector2( 750, 137 )
-transitions = [ "Idle", "Walk", SubResource( 129 ), "Walk", "Idle", SubResource( 130 ), "Idle", "Run", SubResource( 52 ), "Run", "Idle", SubResource( 53 ), "Jump", "Idle", SubResource( 54 ), "Idle", "Jump", SubResource( 55 ), "Defense", "Idle", SubResource( 56 ), "Idle", "Defense", SubResource( 57 ), "Roll", "Idle", SubResource( 58 ), "Idle", "Roll", SubResource( 59 ), "Walk", "Roll", SubResource( 60 ), "Roll", "Walk", SubResource( 61 ), "Jump", "Walk", SubResource( 62 ), "Walk", "Jump", SubResource( 63 ), "Walk", "Run", SubResource( 64 ), "Run", "Walk", SubResource( 65 ), "Defense", "Run", SubResource( 66 ), "Run", "Defense", SubResource( 67 ), "Defense", "Roll", SubResource( 68 ), "Roll", "Defense", SubResource( 69 ), "Run", "Jump", SubResource( 70 ), "Jump", "Run", SubResource( 71 ), "Jump", "Roll", SubResource( 72 ), "Roll", "Jump", SubResource( 73 ), "Defense", "Jump", SubResource( 74 ), "Jump", "Defense", SubResource( 75 ), "Walk", "Defense", SubResource( 76 ), "Defense", "Walk", SubResource( 77 ), "Run", "Roll", SubResource( 78 ), "Roll", "Run", SubResource( 79 ), "Idle", "Die", SubResource( 140 ), "Walk", "Die", SubResource( 143 ), "Roll", "Die", SubResource( 145 ), "Jump", "Die", SubResource( 146 ), "Run", "Die", SubResource( 148 ), "Defense", "Die", SubResource( 150 ), "Idle", "Attack_A", SubResource( 159 ), "Attack_A", "Idle", SubResource( 160 ), "Attack_A", "Roll", SubResource( 161 ), "Roll", "Attack_A", SubResource( 162 ), "Attack_A", "Walk", SubResource( 163 ), "Walk", "Attack_A", SubResource( 164 ), "Attack_A", "Die", SubResource( 165 ), "Attack_A", "Defense", SubResource( 166 ), "Defense", "Attack_A", SubResource( 167 ), "Run", "Attack_A", SubResource( 168 ), "Attack_A", "Run", SubResource( 169 ), "Attack_B", "Die", SubResource( 180 ), "Attack_B", "Attack_A", SubResource( 181 ), "Attack_A", "Attack_B", SubResource( 182 ), "Attack_B", "Walk", SubResource( 183 ), "Walk", "Attack_B", SubResource( 184 ), "Attack_B", "Roll", SubResource( 185 ), "Roll", "Attack_B", SubResource( 186 ), "Attack_B", "Idle", SubResource( 187 ), "Idle", "Attack_B", SubResource( 188 ), "Attack_B", "Defense", SubResource( 191 ), "Defense", "Attack_B", SubResource( 192 ), "Attack_B", "Run", SubResource( 193 ), "Run", "Attack_B", SubResource( 194 ), "Attack_C", "Attack_B", SubResource( 202 ), "Attack_B", "Attack_C", SubResource( 203 ), "Attack_C", "Attack_A", SubResource( 204 ), "Attack_A", "Attack_C", SubResource( 205 ), "Attack_C", "Die", SubResource( 206 ), "Attack_C", "Walk", SubResource( 207 ), "Walk", "Attack_C", SubResource( 208 ), "Attack_C", "Run", SubResource( 211 ), "Run", "Attack_C", SubResource( 212 ), "Attack_C", "Idle", SubResource( 213 ), "Idle", "Attack_C", SubResource( 214 ), "Attack_C", "Roll", SubResource( 215 ), "Roll", "Attack_C", SubResource( 216 ), "Attack_C", "Defense", SubResource( 217 ), "Defense", "Attack_C", SubResource( 218 ), "Attack_D", "Attack_C", SubResource( 228 ), "Attack_C", "Attack_D", SubResource( 229 ), "Attack_D", "Walk", SubResource( 230 ), "Walk", "Attack_D", SubResource( 231 ), "Attack_D", "Attack_B", SubResource( 232 ), "Attack_B", "Attack_D", SubResource( 233 ), "Attack_D", "Die", SubResource( 234 ), "Attack_D", "Attack_A", SubResource( 235 ), "Attack_A", "Attack_D", SubResource( 236 ), "Attack_D", "Idle", SubResource( 237 ), "Idle", "Attack_D", SubResource( 238 ), "Attack_D", "Run", SubResource( 239 ), "Run", "Attack_D", SubResource( 240 ), "Attack_D", "Defense", SubResource( 241 ), "Defense", "Attack_D", SubResource( 242 ), "Attack_D", "Roll", SubResource( 243 ), "Roll", "Attack_D", SubResource( 244 ), "Jump_Attack", "Jump", SubResource( 250 ), "Jump", "Jump_Attack", SubResource( 251 ), "Run", "Jump_Attack", SubResource( 252 ), "Jump_Attack", "Run", SubResource( 253 ), "Hurt_1", "Roll", SubResource( 268 ), "Roll", "Hurt_1", SubResource( 269 ), "Hurt_1", "Attack_A", SubResource( 270 ), "Attack_A", "Hurt_1", SubResource( 271 ), "Hurt_1", "Idle", SubResource( 272 ), "Idle", "Hurt_1", SubResource( 273 ), "Hurt_1", "Walk", SubResource( 274 ), "Walk", "Hurt_1", SubResource( 275 ), "Hurt_1", "Die", SubResource( 276 ), "Hurt_1", "Attack_B", SubResource( 277 ), "Attack_B", "Hurt_1", SubResource( 278 ), "Hurt_1", "Run", SubResource( 279 ), "Run", "Hurt_1", SubResource( 280 ), "Hurt_1", "Defense", SubResource( 281 ), "Hurt_1", "Attack_D", SubResource( 282 ), "Attack_D", "Hurt_1", SubResource( 283 ), "Hurt_1", "Jump", SubResource( 284 ), "Jump", "Hurt_1", SubResource( 285 ), "Jump_Attack", "Hurt_1", SubResource( 286 ), "Hurt_1", "Jump_Attack", SubResource( 287 ), "Hurt_1", "Attack_C", SubResource( 288 ), "Attack_C", "Hurt_1", SubResource( 289 ), "Hurt_1", "Hurt_2", SubResource( 290 ), "Hurt_2", "Hurt_1", SubResource( 291 ), "Hurt_2", "Defense", SubResource( 292 ), "Hurt_2", "Walk", SubResource( 293 ), "Walk", "Hurt_2", SubResource( 294 ), "Hurt_2", "Idle", SubResource( 295 ), "Idle", "Hurt_2", SubResource( 296 ), "Hurt_2", "Roll", SubResource( 297 ), "Roll", "Hurt_2", SubResource( 298 ), "Hurt_2", "Attack_A", SubResource( 299 ), "Attack_A", "Hurt_2", SubResource( 300 ), "Hurt_2", "Attack_B", SubResource( 301 ), "Attack_B", "Hurt_2", SubResource( 302 ), "Hurt_2", "Die", SubResource( 303 ), "Hurt_2", "Run", SubResource( 304 ), "Run", "Hurt_2", SubResource( 305 ), "Hurt_2", "Jump", SubResource( 306 ), "Jump", "Hurt_2", SubResource( 307 ), "Hurt_2", "Jump_Attack", SubResource( 308 ), "Jump_Attack", "Hurt_2", SubResource( 309 ), "Hurt_2", "Attack_D", SubResource( 310 ), "Attack_D", "Hurt_2", SubResource( 311 ), "Hurt_2", "Attack_C", SubResource( 312 ), "Attack_C", "Hurt_2", SubResource( 313 ) ]
+transitions = [ "Idle", "Walk", SubResource( 129 ), "Walk", "Idle", SubResource( 130 ), "Idle", "Run", SubResource( 52 ), "Run", "Idle", SubResource( 53 ), "Jump", "Idle", SubResource( 54 ), "Idle", "Jump", SubResource( 55 ), "Defense", "Idle", SubResource( 56 ), "Idle", "Defense", SubResource( 57 ), "Roll", "Idle", SubResource( 58 ), "Idle", "Roll", SubResource( 59 ), "Walk", "Roll", SubResource( 60 ), "Roll", "Walk", SubResource( 61 ), "Jump", "Walk", SubResource( 62 ), "Walk", "Jump", SubResource( 63 ), "Walk", "Run", SubResource( 64 ), "Run", "Walk", SubResource( 65 ), "Defense", "Run", SubResource( 66 ), "Run", "Defense", SubResource( 67 ), "Defense", "Roll", SubResource( 68 ), "Roll", "Defense", SubResource( 69 ), "Run", "Jump", SubResource( 70 ), "Jump", "Run", SubResource( 71 ), "Jump", "Roll", SubResource( 72 ), "Roll", "Jump", SubResource( 73 ), "Defense", "Jump", SubResource( 74 ), "Jump", "Defense", SubResource( 75 ), "Walk", "Defense", SubResource( 76 ), "Defense", "Walk", SubResource( 77 ), "Run", "Roll", SubResource( 78 ), "Roll", "Run", SubResource( 79 ), "Idle", "Die", SubResource( 140 ), "Walk", "Die", SubResource( 143 ), "Roll", "Die", SubResource( 145 ), "Jump", "Die", SubResource( 146 ), "Run", "Die", SubResource( 148 ), "Defense", "Die", SubResource( 150 ), "Idle", "Attack_A", SubResource( 159 ), "Attack_A", "Idle", SubResource( 160 ), "Attack_A", "Roll", SubResource( 161 ), "Roll", "Attack_A", SubResource( 162 ), "Attack_A", "Walk", SubResource( 163 ), "Walk", "Attack_A", SubResource( 164 ), "Attack_A", "Die", SubResource( 165 ), "Attack_A", "Defense", SubResource( 166 ), "Defense", "Attack_A", SubResource( 167 ), "Run", "Attack_A", SubResource( 168 ), "Attack_A", "Run", SubResource( 169 ), "Attack_B", "Die", SubResource( 180 ), "Attack_B", "Attack_A", SubResource( 181 ), "Attack_A", "Attack_B", SubResource( 182 ), "Attack_B", "Walk", SubResource( 183 ), "Walk", "Attack_B", SubResource( 184 ), "Attack_B", "Roll", SubResource( 185 ), "Roll", "Attack_B", SubResource( 186 ), "Attack_B", "Idle", SubResource( 187 ), "Idle", "Attack_B", SubResource( 188 ), "Attack_B", "Defense", SubResource( 191 ), "Defense", "Attack_B", SubResource( 192 ), "Attack_B", "Run", SubResource( 193 ), "Run", "Attack_B", SubResource( 194 ), "Attack_C", "Attack_B", SubResource( 202 ), "Attack_B", "Attack_C", SubResource( 203 ), "Attack_C", "Attack_A", SubResource( 204 ), "Attack_A", "Attack_C", SubResource( 205 ), "Attack_C", "Die", SubResource( 206 ), "Attack_C", "Walk", SubResource( 207 ), "Walk", "Attack_C", SubResource( 208 ), "Attack_C", "Run", SubResource( 211 ), "Run", "Attack_C", SubResource( 212 ), "Attack_C", "Idle", SubResource( 213 ), "Idle", "Attack_C", SubResource( 214 ), "Attack_C", "Roll", SubResource( 215 ), "Roll", "Attack_C", SubResource( 216 ), "Attack_C", "Defense", SubResource( 217 ), "Defense", "Attack_C", SubResource( 218 ), "Attack_D", "Attack_C", SubResource( 228 ), "Attack_C", "Attack_D", SubResource( 229 ), "Attack_D", "Walk", SubResource( 230 ), "Walk", "Attack_D", SubResource( 231 ), "Attack_D", "Attack_B", SubResource( 232 ), "Attack_B", "Attack_D", SubResource( 233 ), "Attack_D", "Die", SubResource( 234 ), "Attack_D", "Attack_A", SubResource( 235 ), "Attack_A", "Attack_D", SubResource( 236 ), "Attack_D", "Idle", SubResource( 237 ), "Idle", "Attack_D", SubResource( 238 ), "Attack_D", "Run", SubResource( 239 ), "Run", "Attack_D", SubResource( 240 ), "Attack_D", "Defense", SubResource( 241 ), "Defense", "Attack_D", SubResource( 242 ), "Attack_D", "Roll", SubResource( 243 ), "Roll", "Attack_D", SubResource( 244 ), "Jump_Attack", "Jump", SubResource( 250 ), "Jump", "Jump_Attack", SubResource( 251 ), "Run", "Jump_Attack", SubResource( 252 ), "Jump_Attack", "Run", SubResource( 253 ), "Hurt_1", "Roll", SubResource( 268 ), "Roll", "Hurt_1", SubResource( 269 ), "Hurt_1", "Attack_A", SubResource( 270 ), "Attack_A", "Hurt_1", SubResource( 271 ), "Hurt_1", "Idle", SubResource( 272 ), "Idle", "Hurt_1", SubResource( 273 ), "Hurt_1", "Walk", SubResource( 274 ), "Walk", "Hurt_1", SubResource( 275 ), "Hurt_1", "Die", SubResource( 276 ), "Hurt_1", "Attack_B", SubResource( 277 ), "Attack_B", "Hurt_1", SubResource( 278 ), "Hurt_1", "Run", SubResource( 279 ), "Run", "Hurt_1", SubResource( 280 ), "Hurt_1", "Defense", SubResource( 281 ), "Hurt_1", "Attack_D", SubResource( 282 ), "Attack_D", "Hurt_1", SubResource( 283 ), "Hurt_1", "Jump", SubResource( 284 ), "Jump", "Hurt_1", SubResource( 285 ), "Jump_Attack", "Hurt_1", SubResource( 286 ), "Hurt_1", "Jump_Attack", SubResource( 287 ), "Hurt_1", "Attack_C", SubResource( 288 ), "Attack_C", "Hurt_1", SubResource( 289 ), "Hurt_1", "Hurt_2", SubResource( 290 ), "Hurt_2", "Hurt_1", SubResource( 291 ), "Hurt_2", "Defense", SubResource( 292 ), "Hurt_2", "Walk", SubResource( 293 ), "Walk", "Hurt_2", SubResource( 294 ), "Hurt_2", "Idle", SubResource( 295 ), "Idle", "Hurt_2", SubResource( 296 ), "Hurt_2", "Roll", SubResource( 297 ), "Roll", "Hurt_2", SubResource( 298 ), "Hurt_2", "Attack_A", SubResource( 299 ), "Attack_A", "Hurt_2", SubResource( 300 ), "Hurt_2", "Attack_B", SubResource( 301 ), "Attack_B", "Hurt_2", SubResource( 302 ), "Hurt_2", "Die", SubResource( 303 ), "Hurt_2", "Run", SubResource( 304 ), "Run", "Hurt_2", SubResource( 305 ), "Hurt_2", "Jump", SubResource( 306 ), "Jump", "Hurt_2", SubResource( 307 ), "Hurt_2", "Jump_Attack", SubResource( 308 ), "Jump_Attack", "Hurt_2", SubResource( 309 ), "Hurt_2", "Attack_D", SubResource( 310 ), "Attack_D", "Hurt_2", SubResource( 311 ), "Hurt_2", "Attack_C", SubResource( 312 ), "Attack_C", "Hurt_2", SubResource( 313 ), "Kick", "Defense", SubResource( 321 ), "Defense", "Kick", SubResource( 322 ), "Kick", "Idle", SubResource( 323 ), "Idle", "Kick", SubResource( 324 ), "Kick", "Run", SubResource( 325 ), "Run", "Kick", SubResource( 326 ), "Jump_Attack", "Kick", SubResource( 327 ), "Kick", "Jump", SubResource( 328 ), "Jump", "Kick", SubResource( 329 ), "Kick", "Walk", SubResource( 330 ), "Walk", "Kick", SubResource( 331 ), "Kick", "Die", SubResource( 332 ), "Kick", "Attack_D", SubResource( 333 ), "Attack_D", "Kick", SubResource( 334 ), "Kick", "Roll", SubResource( 335 ), "Roll", "Kick", SubResource( 336 ), "Kick", "Hurt_2", SubResource( 337 ), "Hurt_2", "Kick", SubResource( 338 ), "Kick", "Hurt_1", SubResource( 339 ), "Hurt_1", "Kick", SubResource( 340 ), "Kick", "Attack_A", SubResource( 341 ), "Attack_A", "Kick", SubResource( 342 ), "Kick", "Attack_B", SubResource( 343 ), "Attack_B", "Kick", SubResource( 344 ), "Kick", "Attack_C", SubResource( 345 ), "Attack_C", "Kick", SubResource( 346 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -258.762, -365.205 )
+graph_offset = Vector2( -135.283, -219.493 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=172]
 
@@ -5719,6 +6143,8 @@ anims/Jump_Attack_Left = SubResource( 221 )
 anims/Jump_Attack_Right = SubResource( 222 )
 anims/Jump_Left = SubResource( 15 )
 anims/Jump_Right = SubResource( 92 )
+anims/Kick_Left = SubResource( 315 )
+anims/Kick_Right = SubResource( 314 )
 anims/RESET = SubResource( 93 )
 anims/Roll_Left = SubResource( 12 )
 anims/Roll_Right = SubResource( 94 )
@@ -5742,6 +6168,7 @@ parameters/Hurt_2/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Jump/blend_position = Vector2( 0, 0 )
 parameters/Jump_Attack/blend_position = Vector2( 0, 0 )
+parameters/Kick/blend_position = Vector2( 0, 0 )
 parameters/Roll/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
@@ -5784,6 +6211,7 @@ script = ExtResource( 17 )
 script = ExtResource( 18 )
 
 [node name="StateNameDisplay" type="Label" parent="."]
+visible = false
 margin_left = -20.0
 margin_top = -45.0
 margin_right = 20.0
