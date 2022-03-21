@@ -9,26 +9,6 @@ var ready_for_next_attack = false
 const MAX_COMBO_COUNT = 3
 
 var attack_current = {}
-var combo = [{
-		'damage': 1,
-		'animation': 'Attack_A',
-		'effect': null
-	},
-	{
-		'damage': 1,
-		'animation': 'Attack_B',
-		'effect': null
-	},
-	{
-		'damage': 3,
-		'animation': 'Attack_C',
-		'effect': null
-	},
-	{
-		'damage': 4,
-		'animation': 'Attack_D',
-		'effect': null
-	},]
 
 var hit_objects = []
 
@@ -52,8 +32,11 @@ func _change_state(new_state):
 			visible = false
 			monitoring = false
 		STATES.ATTACK:
-			attack_current = combo[Global.sword_count - 1]
-			animate.play(attack_current['animation'])
+			attack_current = Global.combo[Global.sword_count - 1]
+			if !Global.on_ground:
+				animate.play("Jump_Attack")
+			else:
+				animate.play(attack_current['animation'])
 			visible = true
 			monitoring = true
 	state = new_state

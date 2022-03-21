@@ -1,3 +1,4 @@
+
 extends Node
 
 enum { STATUS_NONE, STATUS_INVINCIBLE, STATUS_POISONED, STATUS_STUNNED }
@@ -9,8 +10,17 @@ var is_dashing
 var on_ground
 var sword_count = 0
 var sword_time_count = 2
-var attack_cooldown = 1
+var attack_cooldown = 1.1
 var state_active
+var combo = [{
+		'damage': 1, 'animation': 'Attack_A', 'effect': null
+	}, {
+		'damage': 1, 'animation': 'Attack_B', 'effect': null
+	}, {
+		'damage': 3, 'animation': 'Attack_C', 'effect': null
+	}, {
+		'damage': 4, 'animation': 'Attack_D', 'effect': null
+	},]
 
 ###################### NODE ####################
 export (NodePath) onready var sword_time = get_node(sword_time) as Timer

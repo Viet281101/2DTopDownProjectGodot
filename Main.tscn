@@ -6,6 +6,13 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="Camera2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 322, 182 )
+zoom = Vector2( 1, 1 )
+
+[node name="BottomRight" parent="Camera2D/Limit" index="1"]
+position = Vector2( 653, 387 )
+
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 
 [node name="ground_square" parent="TileMap" index="0"]
@@ -23,12 +30,5 @@ tile_data = PoolIntArray( 196620, 5, 0, 524313, 0, 0 )
 [node name="Player" parent="TileMap/Terrain" index="3" instance=ExtResource( 4 )]
 position = Vector2( 180, 110 )
 
-[node name="Camera2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 322, 182 )
-zoom = Vector2( 1, 1 )
-
-[node name="BottomRight" parent="Camera2D/Limit" index="1"]
-position = Vector2( 653, 387 )
-
-[editable path="TileMap"]
 [editable path="Camera2D"]
+[editable path="TileMap"]

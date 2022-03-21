@@ -2,26 +2,6 @@ extends Motion
 
 onready var animation_state = owner.get_node("AnimationTree").get("parameters/playback")
 onready var touch_ground_dust = preload("res://Scene/Effects/TouchGroundDust.tscn")
-var combo = [{
-		'damage': 1,
-		'animation': 'Attack_A',
-		'effect': null
-	},
-	{
-		'damage': 1,
-		'animation': 'Attack_B',
-		'effect': null
-	},
-	{
-		'damage': 3,
-		'animation': 'Attack_C',
-		'effect': null
-	},
-	{
-		'damage': 4,
-		'animation': 'Attack_D',
-		'effect': null
-	},]
 
 func _ready():
 	Global.connect("attack_finished", self, "_on_SlashEffect_attack_finished")
@@ -44,7 +24,7 @@ func _on_SlashEffect_attack_finished():
 	emit_signal("finished", "previous")
 
 func attack(type):
-	type = combo[Global.sword_count - 1]
+	type = Global.combo[Global.sword_count - 1]
 	animation_state.travel(type['animation'])
 	slash_dust()
 
