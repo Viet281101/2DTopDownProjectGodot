@@ -13,3 +13,6 @@ func _process(_delta):
 
 func animate(type):
 	$AnimationPlayer.play(dust_type[type])
+
+func _exit_tree():
+	queue_free()

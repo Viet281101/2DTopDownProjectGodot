@@ -3,9 +3,6 @@ extends Node
 
 signal finished(next_state_name)
 
-var state_machine = null
-
-
 # Virtual function. Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	return

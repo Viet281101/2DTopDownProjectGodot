@@ -32,3 +32,6 @@ func _on_Timer_timeout():
 	set_process(false)
 	tween.interpolate_property(self, "offset", offset, default_offset, 0.1, 6, 2)
 	tween.start()
+
+func _exit_tree():
+	queue_free()

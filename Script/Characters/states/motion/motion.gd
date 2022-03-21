@@ -33,7 +33,8 @@ func update_look_direction(input_vector):
 		animation_tree.set("parameters/Attack_D/blend_position", input_vector)
 		animation_tree.set("parameters/Defense/blend_position", input_vector)
 		animation_tree.set("parameters/Kick/blend_position", input_vector)
-		animation_tree.set("parameters/Hurt/blend_position", input_vector)
+		animation_tree.set("parameters/Hurt_1/blend_position", input_vector)
+		animation_tree.set("parameters/Hurt_2/blend_position", input_vector)
 		animation_tree.set("parameters/Die/blend_position", input_vector)
 		owner.look_direction = input_vector
 	return input_vector
