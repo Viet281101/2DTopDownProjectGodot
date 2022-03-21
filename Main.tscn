@@ -7,7 +7,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 322, 182 )
+position = Vector2( 180, 110 )
 zoom = Vector2( 1, 1 )
 
 [node name="BottomRight" parent="Camera2D/Limit" index="1"]
@@ -29,6 +29,9 @@ tile_data = PoolIntArray( 196620, 5, 0, 524313, 0, 0 )
 
 [node name="Player" parent="TileMap/Terrain" index="3" instance=ExtResource( 4 )]
 position = Vector2( 180, 110 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="TileMap/Terrain/Player"]
+remote_path = NodePath("../../../../Camera2D")
 
 [editable path="Camera2D"]
 [editable path="TileMap"]

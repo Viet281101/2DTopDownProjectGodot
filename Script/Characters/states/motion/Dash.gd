@@ -13,6 +13,10 @@ var dash_speed = 50000
 var dash_duration = 0.2
 var dash_delay = 0.4
 
+func _ready():
+	duration_timer.connect("timeout", self, "_on_DurationTimer_timeout")
+	ghost_timer.connect("timeout", self, "_on_GhostTimer_timeout")
+
 func enter():
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
@@ -51,6 +55,7 @@ func start_dash(sprite, duration, direction):
 	
 	duration_timer.wait_time = duration
 	duration_timer.start()
+	ghost_timer.wait_time = 0.02
 	ghost_timer.start()
 	instance_ghost()
 	

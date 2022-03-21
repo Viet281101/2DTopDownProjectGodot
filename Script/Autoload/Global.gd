@@ -6,7 +6,9 @@ enum { STATUS_NONE, STATUS_INVINCIBLE, STATUS_POISONED, STATUS_STUNNED }
 
 var camera = null ## Global.camera.shake(time, shake)
 var can_dash = true
+var can_roll = true
 var is_dashing
+var is_rolling
 var can_attack = true
 var jump_attacked = false
 var on_ground

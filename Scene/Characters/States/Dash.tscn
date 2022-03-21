@@ -57,7 +57,6 @@ script = ExtResource( 1 )
 one_shot = true
 
 [node name="GhostTimer" type="Timer" parent="."]
-wait_time = 0.02
 
 [node name="DustTrail" type="Particles2D" parent="."]
 show_behind_parent = true
@@ -81,6 +80,3 @@ explosiveness = 1.0
 local_coords = false
 process_material = SubResource( 7 )
 texture = ExtResource( 2 )
-
-[connection signal="timeout" from="DurationTimer" to="." method="_on_DurationTimer_timeout"]
-[connection signal="timeout" from="GhostTimer" to="." method="_on_GhostTimer_timeout"]
