@@ -1,4 +1,5 @@
-extends Area2D
+
+extends Damage_Source
 
 enum STATES { IDLE, ATTACK }
 var state = null
@@ -7,7 +8,6 @@ enum ATTACK_INPUT_STATES { IDLE, LISTENING, REGISTERED }
 var attack_input_state = ATTACK_INPUT_STATES.IDLE
 var ready_for_next_attack = false
 const MAX_COMBO_COUNT = 3
-
 var attack_current = {}
 
 var hit_objects = []
@@ -16,7 +16,7 @@ onready var animate = $AnimationPlayer
 
 func _ready():
 	animate.connect('animation_finished', self, "_on_animation_finished")
-	self.connect("body_entered", self, "_on_body_entered")
+#	self.connect("body_entered", self, "_on_body_entered")
 	_change_state(STATES.IDLE)
 
 func _change_state(new_state):
@@ -32,11 +32,13 @@ func _change_state(new_state):
 			visible = false
 			monitoring = false
 		STATES.ATTACK:
+#			var attack = Global.combo[min(Global.sword_count, Global.combo.size() - 1)]
 			attack_current = Global.combo[Global.sword_count - 1]
 			if !Global.on_ground:
 				animate.play("Jump_Attack")
 			else:
 				animate.play(attack_current['animation'])
+			damage = attack_current['damage']
 			visible = true
 			monitoring = true
 	state = new_state

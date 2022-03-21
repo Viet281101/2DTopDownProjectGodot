@@ -105,6 +105,7 @@ func take_damage_from(damage_source):
 		return
 	.take_damage_from(damage_source)
 	hurt_state.knockback_direction = (damage_source.global_position - global_position).normalized()
+	Global.camera.shake(0.4, 2)
 
 func _on_animation_finished(anim_name):
 	current_state._on_animation_finished(anim_name)
