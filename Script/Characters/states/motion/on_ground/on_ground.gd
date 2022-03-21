@@ -10,9 +10,8 @@ func enter():
 	Global.on_ground = true
 
 func handle_input(event):
-	if event.is_action_pressed("ui_attack"):
+	if event.is_action_pressed("ui_attack") && Global.can_attack:
 		emit_signal("finished", "attack")
-		yield(get_tree().create_timer(Global.attack_cooldown), "timeout")
 	if event.is_action_pressed("ui_jump"):
 		emit_signal("finished", "jump")
 		Global.on_ground = false

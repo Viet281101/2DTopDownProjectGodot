@@ -71,6 +71,8 @@ func _physics_process(delta):
 func _input(event):
 	if Global.state_active:
 		current_state.handle_input(event)
+	if !Global.on_ground && event.is_action_pressed("ui_idle") or event.is_action_pressed("ui_accept"):
+		_change_state("idle")
 
 func _change_state(state_name):
 	current_state.exit()

@@ -11,17 +11,28 @@ func enter():
 		attack(Global.sword_count)
 	if !Global.on_ground:
 		animation_state.travel("Jump_Attack")
-		Global.state_cooldown(1.5)
+		Global.jump_attacked = true
+		Global.state_cooldown(1)
+	Global.can_attack = false
 
 func _on_SlashEffect_attack_finished():
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
+	
 	if not input_direction:
 		animation_state.travel("Idle")
 	if input_direction:
 		animation_state.travel("Walk")
 	
 	emit_signal("finished", "previous")
+	
+	if Global.jump_attacked:
+		yield(get_tree().create_timer(0.8), "timeout")
+		Global.can_attack = true
+		Global.jump_attacked = false
+	else:
+		Global.can_attack = true
+		Global.jump_attacked = false
 
 func attack(type):
 	type = Global.combo[Global.sword_count - 1]
@@ -35,3 +46,4 @@ func slash_dust():
 	get_parent().get_parent().get_parent().add_child(dust)
 	dust.animate(slash_dust)
 	dust.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -17)
+
