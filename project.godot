@@ -15,9 +15,14 @@ _global_script_classes=[ {
 "path": "res://Script/Characters/Actor.gd"
 }, {
 "base": "Area2D",
-"class": "Damage_Source",
+"class": "DamageSource",
 "language": "GDScript",
 "path": "res://Script/Characters/health/DamageSource.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Monster",
+"language": "GDScript",
+"path": "res://Script/Characters/Monster.gd"
 }, {
 "base": "State",
 "class": "Motion",
@@ -46,7 +51,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
-"Damage_Source": "",
+"DamageSource": "",
+"Monster": "",
 "Motion": "",
 "OnGround": "",
 "Player": "",

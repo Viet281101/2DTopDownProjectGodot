@@ -1,6 +1,6 @@
 
 extends Area2D
-class_name Damage_Source
+class_name DamageSource
 
 export(int) var damage = 2
 var effect

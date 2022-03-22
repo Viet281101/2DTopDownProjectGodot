@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/Shader/white_color.shader" type="Shader" id=1]
 [ext_resource path="res://Scene/Characters/Health/HitBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Characters/Health/Stats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Script/Characters/Monster.gd" type="Script" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -65,6 +66,7 @@ tracks/1/keys = {
 }
 
 [node name="Monster" type="KinematicBody2D"]
+script = ExtResource( 4 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 

@@ -1,6 +1,6 @@
 extends Area2D
 
-const DamageSource = preload("res://Script/Characters/health/DamageSource.gd")
+#const DamageSource = preload("res://Script/Characters/health/DamageSource.gd")
 
 func _ready():
 	self.connect("area_entered", self, "_on_area_entered")
