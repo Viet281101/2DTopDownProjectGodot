@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Script/Shader/white_color.shader" type="Shader" id=1]
+[ext_resource path="res://Scene/Characters/Health/HitBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Characters/Health/Stats.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/whiten = true
+shader_param/mix_weight = 0.6
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skin/BodyPivot:material:shader_param/whiten")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skin/BodyPivot:material:shader_param/mix_weight")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.6 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "stagger"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skin/BodyPivot:material:shader_param/whiten")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skin/BodyPivot:material:shader_param/mix_weight")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.6, 1.0, 0.7, 1.0 ]
+}
+
+[node name="Monster" type="KinematicBody2D"]
+
+[node name="Stats" parent="." instance=ExtResource( 3 )]
+
+[node name="HitBox" parent="." instance=ExtResource( 2 )]
+
+[node name="Skin" type="Position2D" parent="."]
+
+[node name="BodyPivot" type="Position2D" parent="Skin"]
+material = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/stagger = SubResource( 3 )
