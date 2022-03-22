@@ -21,7 +21,6 @@ func enter():
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
 	start_dash(owner.get_node("BodyPivot/Sprite"), dash_duration, input_direction)
-	animation_state.travel("Run")
 
 func physics_update(delta):
 	var input_direction = get_input_direction()
@@ -31,6 +30,7 @@ func physics_update(delta):
 	
 	var velocity = input_direction.normalized() * speed * delta
 	owner.move_and_slide(velocity)
+	animation_state.travel("Run")
 	
 	dust_trail.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -16)
 	dust_burst.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -16)
@@ -49,6 +49,7 @@ func instance_ghost():
 	
 
 func start_dash(sprite, duration, direction):
+	owner.get_node("HitBox").set_active(false)
 	self.sprite = sprite
 	sprite.material.set_shader_param("mix_weight", 0.7)
 	sprite.material.set_shader_param("whiten", true)
@@ -82,6 +83,7 @@ func end_dash():
 	if input_direction:
 		animation_state.travel("Walk")
 	emit_signal("finished", "previous")
+	owner.get_node("HitBox").set_active(true)
 	Global.can_dash = true
 
 func _on_DurationTimer_timeout():

@@ -7,6 +7,7 @@ var current_state = null
 
 ##### Player nodes:
 export (NodePath) onready var player_col = get_node(player_col) as CollisionShape2D
+export (NodePath) onready var hitbox = get_node(hitbox) as CollisionShape2D
 export (NodePath) onready var body_pivot = get_node(body_pivot) as Position2D
 export (NodePath) onready var body = get_node(body) as Sprite
 export (NodePath) onready var dust_trail_pos = get_node(dust_trail_pos) as Position2D
@@ -67,6 +68,7 @@ func _physics_process(delta):
 	Global.is_rolling = roll_state.is_rolling()
 	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
 	player_col.global_position = body_pivot.global_position + Vector2(0, 26)
+	hitbox.global_position = body_pivot.global_position + Vector2(0, 6)
 	player_col.rotation_degrees = 90
 
 func _input(event):

@@ -12,10 +12,7 @@ func _ready():
 	duration_timer.connect("timeout", self, "_on_DurationTimer_timeout")
 
 func enter():
-	var input_direction = get_input_direction()
-	update_look_direction(input_direction)
 	start_roll(roll_duration)
-	animation_state.travel("Roll")
 
 func physics_update(delta):
 	var input_direction = get_input_direction()
@@ -25,11 +22,12 @@ func physics_update(delta):
 	
 	var velocity = input_direction.normalized() * speed * delta
 	owner.move_and_slide(velocity)
-	
+	animation_state.travel("Roll")
 
 func start_roll(duration):
 	duration_timer.wait_time = duration
 	duration_timer.start()
+	owner.get_node("HitBox").set_active(false)
 
 func is_rolling():
 	return !duration_timer.is_stopped()
@@ -44,6 +42,7 @@ func end_roll():
 	if input_direction:
 		animation_state.travel("Walk")
 	emit_signal("finished", "previous")
+	owner.get_node("HitBox").set_active(true)
 	Global.can_roll = true
 
 func _on_DurationTimer_timeout():

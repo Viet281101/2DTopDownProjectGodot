@@ -874,8 +874,8 @@ tracks/13/keys = {
 [sub_resource type="CircleShape2D" id=5]
 
 [node name="SlashEffect" type="Area2D"]
-collision_layer = 16
-collision_mask = 0
+collision_layer = 128
+collision_mask = 32
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
