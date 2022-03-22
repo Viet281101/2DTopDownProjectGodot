@@ -39,6 +39,7 @@ func _change_state(new_state):
 			else:
 				animate.play(attack_current['animation'])
 			damage = attack_current['damage']
+			effect = attack_current["effect"]
 			visible = true
 			monitoring = true
 	state = new_state
