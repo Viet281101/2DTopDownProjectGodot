@@ -95,7 +95,7 @@ func _change_state(state_name):
 	
 	current_state = states_stack[0]
 	if state_name != "previous":
-		# To not reinitialize the state if we"re going back to the previous state
+		### To not reinitialize the state if we"re going back to the previous state
 		current_state.enter()
 	Global.emit_signal("state_changed", states_stack)
 

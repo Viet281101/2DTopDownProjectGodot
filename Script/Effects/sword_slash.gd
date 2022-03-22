@@ -1,5 +1,5 @@
 
-extends Damage_Source
+extends DamageSource
 
 enum STATES { IDLE, ATTACK }
 var state = null
@@ -63,11 +63,11 @@ func attack():
 	_change_state(STATES.ATTACK)
 	
 
-# use with AnimationPlayer func track
+## use with AnimationPlayer func track
 func set_attack_input_listening():
 	attack_input_state = ATTACK_INPUT_STATES.LISTENING
 
-# use with AnimationPlayer func track
+## use with AnimationPlayer func track
 func set_ready_for_next_attack():
 	ready_for_next_attack = true
 
