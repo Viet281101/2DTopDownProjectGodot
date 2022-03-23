@@ -13,8 +13,10 @@ export (NodePath) onready var player_col = get_node(player_col) as CollisionShap
 export (NodePath) onready var hitbox = get_node(hitbox) as CollisionShape2D
 export (NodePath) onready var body_pivot = get_node(body_pivot) as Position2D
 export (NodePath) onready var body = get_node(body) as Sprite
+export (NodePath) onready var body_weapon = get_node(body_weapon) as Sprite
 export (NodePath) onready var dust_trail_pos = get_node(dust_trail_pos) as Position2D
 export (NodePath) onready var player_shadow = get_node(player_shadow) as Sprite
+export (NodePath) onready var sword = get_node(sword) as Area2D
 export (NodePath) onready var animationPlayer = get_node(animationPlayer) as AnimationPlayer
 export (NodePath) onready var animationTree = get_node(animationTree) as AnimationTree
 
@@ -50,6 +52,7 @@ func _ready():
 	Global.state_active = true
 	Global.player = self
 	animationTree.active = true
+	no_weapon_in_hand()
 	for state_node in state_machine.get_children():
 		state_node.connect("finished", self, "_change_state")
 	
@@ -122,6 +125,20 @@ func spawn_dust() -> void:
 	else:
 		dust.get_node("Dust").flip_v = false
 	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
+
+func no_weapon_in_hand():
+	sword.monitoring = false
+	sword.visible = false
+	body_weapon.visible = false
+	Global.can_attack = false
+	body.visible = true
+
+func has_weapon_in_hand():
+	sword.monitoring = true
+	sword.visible = true
+	body_weapon.visible = true
+	Global.can_attack = true
+	body.visible = false
 
 func _on_animation_finished(anim_name):
 	current_state._on_animation_finished(anim_name)

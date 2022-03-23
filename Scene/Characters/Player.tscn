@@ -1,4 +1,4 @@
-[gd_scene load_steps=323 format=2]
+[gd_scene load_steps=325 format=2]
 
 [ext_resource path="res://assets/characters/warrior/run.png" type="Texture" id=1]
 [ext_resource path="res://Script/Characters/Player.gd" type="Script" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://assets/characters/warrior/hit.png" type="Texture" id=33]
 [ext_resource path="res://assets/characters/warrior/kick.png" type="Texture" id=34]
 [ext_resource path="res://Scene/Characters/Health/HitBox.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scene/Characters/Health/DamageSource.tscn" type="PackedScene" id=36]
 
 [sub_resource type="CapsuleShape2D" id=377]
 radius = 6.0
@@ -44,6 +45,10 @@ height = 38.0
 shader = ExtResource( 20 )
 shader_param/whiten = false
 shader_param/mix_weight = 1.0
+
+[sub_resource type="CapsuleShape2D" id=378]
+radius = 7.6
+height = 38.0
 
 [sub_resource type="CapsuleShape2D" id=88]
 radius = 5.0
@@ -208,6 +213,66 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 7.6, 12.0, 12.0, 14.0, 22.0, 25.4, 13.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 38.0, 38.0, 46.0, 52.0, 52.0, 36.0, 43.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, false, false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -5, 0 ), Vector2( -14, -10 ), Vector2( 21, -24 ), Vector2( 21, -24 ), Vector2( -27, -13 ), Vector2( -32, 2 ), Vector2( -15, 14 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -68.0, -28.0, 64.5421, 64.5421, 40.0, -15.0, -126.337 ]
+}
 
 [sub_resource type="Animation" id=153]
 resource_name = "Attack_A_Right"
@@ -368,6 +433,66 @@ tracks/12/keys = {
 "update": 1,
 "values": [ ExtResource( 23 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 10.0, 12.0, 12.0, 12.0, 21.0, 23.0, 13.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 30.0, 38.0, 38.0, 38.0, 40.0, 36.0, 36.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6, -1 ), Vector2( 12, -11 ), Vector2( -16, -22 ), Vector2( -24, -25 ), Vector2( 29, -13 ), Vector2( 33, -4 ), Vector2( 12, 13 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 63.0, 20.0, -63.8222, -63.8222, -35.0, 8.61434, 120.0 ]
+}
 
 [sub_resource type="Animation" id=173]
 resource_name = "Attack_B_Left"
@@ -516,6 +641,66 @@ tracks/11/keys = {
 "update": 0,
 "values": [ Vector2( -18, 0 ) ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.3, 5.3, 5.3, 5.3, 9.0, 12.7 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40.0, 40.0, 90.0, 90.0, 50.0, 38.8 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -5, -1 ), Vector2( 5, -2 ), Vector2( -25, -3 ), Vector2( -37, 2 ), Vector2( -27, 16 ), Vector2( -13, 14 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 285.0, 269.0, 270.0, 270.0, 249.0, 240.043 ]
+}
 
 [sub_resource type="Animation" id=174]
 resource_name = "Attack_B_Right"
@@ -663,6 +848,66 @@ tracks/11/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 18, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.3, 5.3, 5.3, 5.3, 11.0, 11.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40.0, 50.0, 90.0, 90.0, 43.0, 43.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, -5.96046e-08 ), Vector2( -5, -2 ), Vector2( 28, -2 ), Vector2( 33, 3 ), Vector2( 23, 12 ), Vector2( 11, 14 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 71.0, 90.0, 90.0, 90.0, 120.0, 120.0 ]
 }
 
 [sub_resource type="Animation" id=195]
@@ -836,6 +1081,66 @@ tracks/13/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.3, 6.0, 7.0, 7.0, 25.0, 7.8, 7.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40.0, 35.0, 35.0, 35.0, 34.0, 41.0, 35.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 6 ), Vector2( -2, 17 ), Vector2( 7, 15 ), Vector2( 27, 13 ), Vector2( -50, 16 ), Vector2( -36, 0 ), Vector2( -10, -2.38419e-07 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -90.0, -132.0, -143.0, -205.357, 0.0, -72.4183, -72.4183 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
 
 [sub_resource type="Animation" id=196]
 resource_name = "Attack_C_Right"
@@ -995,6 +1300,66 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.3, 5.3, 7.0, 7.0, 23.0, 8.0, 6.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40.0, 40.0, 40.0, 40.0, 40.0, 48.0, 40.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, 7 ), Vector2( -4.76837e-07, 17 ), Vector2( -7, 17 ), Vector2( -26, 11 ), Vector2( 50, 10 ), Vector2( 33, 1 ), Vector2( 11, 0 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 130.0, 145.0, 200.0, 40.0, 72.0, 72.0 ]
 }
 
 [sub_resource type="Animation" id=220]
@@ -1168,6 +1533,66 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( -18, 0 ) ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 6.0, 25.0, 21.0, 7.0, 26.0, 14.0, 7.0, 5.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40.0, 40.0, 57.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 16 ), Vector2( -2, 16 ), Vector2( -23, -21 ), Vector2( 8, -35 ), Vector2( 13, -22 ), Vector2( -41, 8 ), Vector2( -36, 15 ), Vector2( -17, 16 ), Vector2( -1, 15 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -135.0, -135.0, 47.0, 68.0, 68.0, -20.0, -116.0, -116.0, -135.0 ]
+}
 
 [sub_resource type="Animation" id=219]
 resource_name = "Attack_D_Right"
@@ -1339,6 +1764,66 @@ tracks/13/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 18, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.0, 5.0, 20.0, 16.0, 5.0, 23.0, 14.0, 7.0, 5.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40.0, 40.0, 58.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, false ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 16 ), Vector2( 2, 16 ), Vector2( 21, -26 ), Vector2( -15, -34 ), Vector2( -17, -21 ), Vector2( 38, 5 ), Vector2( 38, 15 ), Vector2( 24, 18 ), Vector2( 2, 16 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 135.0, 135.0, -70.0, -90.0, -64.0, 0.0, 117.0, 117.0, 135.0 ]
 }
 
 [sub_resource type="Animation" id=133]
@@ -2176,6 +2661,54 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( -18, 0 ) ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.5, 4.5, 4.5, 4.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 30.0, 30.0, 30.0, 30.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 17 ), Vector2( -1, 17 ), Vector2( 25, 17 ), Vector2( 3, 15 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -134.0, -134.0, -206.0, -134.0 ]
+}
 
 [sub_resource type="Animation" id=254]
 resource_name = "Hurt_1_Right"
@@ -2347,6 +2880,54 @@ tracks/13/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 18, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.5, 4.5, 4.5, 4.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 30.0, 30.0, 30.0, 30.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 17 ), Vector2( -1, 17 ), Vector2( -27, 19 ), Vector2( -2, 15 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 134.0, 134.0, 209.0, 134.0 ]
 }
 
 [sub_resource type="Animation" id=257]
@@ -2520,6 +3101,54 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( -18, 0 ) ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.5, 4.5, 4.5, 4.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 30.0, 30.0, 30.0, 30.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, -1 ), Vector2( 27, 16 ), Vector2( 29, 16 ), Vector2( -3, -0.999998 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -63.0, -203.0, -203.0, -63.0 ]
+}
 
 [sub_resource type="Animation" id=256]
 resource_name = "Hurt_2_Right"
@@ -2691,6 +3320,54 @@ tracks/13/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 18, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.5, 4.5, 4.5, 4.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 30.0, 30.0, 30.0, 30.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, -1 ), Vector2( -27, 17 ), Vector2( -31, 18 ), Vector2( 2, -0.999998 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 63.0, 209.0, 207.0, 63.0 ]
 }
 
 [sub_resource type="Animation" id=90]
@@ -2877,6 +3554,54 @@ tracks/14/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.5 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -6, -1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -63.0 ]
+}
 
 [sub_resource type="Animation" id=91]
 resource_name = "Idle_Right"
@@ -3062,6 +3787,54 @@ tracks/14/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.5 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6, -1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 63.0 ]
+}
 
 [sub_resource type="Animation" id=221]
 resource_name = "Jump_Attack_Left"
@@ -3233,6 +4006,66 @@ tracks/13/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.5, 4.5, 22.0, 22.0, 4.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 30.0, 30.0, 30.0, 30.0, 40.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -14, -61 ), Vector2( -14, -61 ), Vector2( -57, -31 ), Vector2( -61, -7.99999 ), Vector2( -25, -30 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 45.0, 55.0, -15.0, -15.0, -117.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=222]
@@ -3406,6 +4239,66 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( 18, 0 ) ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.5, 4.5, 25.0, 4.5, 4.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40.0, 40.0, 30.0, 40.0, 40.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.999998, -78 ), Vector2( 7.25, -66 ), Vector2( 35, -54 ), Vector2( 42, -30 ), Vector2( 26, -30 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -45.0, -60.0, -15.0, 115.0, 117.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "Jump_Left"
@@ -3566,6 +4459,66 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Vector2( -18, 0 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=92]
 resource_name = "Jump_Right"
@@ -3725,6 +4678,66 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 18, 0 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=315]
@@ -4253,6 +5266,66 @@ tracks/14/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 7.6 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 38.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5, 0 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -68.0 ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "Roll_Left"
@@ -4438,6 +5511,66 @@ tracks/14/keys = {
 "args": [  ],
 "method": "spawn_dust"
 } ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=94]
@@ -4625,6 +5758,66 @@ tracks/14/keys = {
 "method": "spawn_dust"
 } ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=95]
 resource_name = "Run_Left"
@@ -4797,6 +5990,66 @@ tracks/13/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=96]
@@ -4971,6 +6224,66 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( 18, 0 ) ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=97]
 resource_name = "Walk_Left"
@@ -5144,6 +6457,54 @@ tracks/13/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.5 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -6, -1 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -63.0 ]
+}
 
 [sub_resource type="Animation" id=98]
 resource_name = "Walk_Right"
@@ -5304,6 +6665,54 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("DamageSource/CollisionShape2D:shape:radius")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.5 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("DamageSource/CollisionShape2D:shape:height")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("DamageSource/CollisionShape2D:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 7, -1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("DamageSource/CollisionShape2D:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 63.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=154]
@@ -6100,8 +7509,10 @@ player_col = NodePath("CollisionShape2D")
 hitbox = NodePath("HitBox/CollisionShape2D")
 body_pivot = NodePath("BodyPivot")
 body = NodePath("BodyPivot/Sprite")
+body_weapon = NodePath("BodyPivot/SpriteWithWeapon")
 dust_trail_pos = NodePath("DustTrailPos")
 player_shadow = NodePath("player_shadow")
+sword = NodePath("DamageSource")
 animationPlayer = NodePath("AnimationPlayer")
 animationTree = NodePath("AnimationTree")
 state_machine = NodePath("StateMachine")
@@ -6155,6 +7566,15 @@ script = ExtResource( 24 )
 [node name="Offset" type="Position2D" parent="WeaponPivot"]
 
 [node name="SlashEffect" parent="WeaponPivot/Offset" instance=ExtResource( 25 )]
+
+[node name="DamageSource" parent="." instance=ExtResource( 36 )]
+collision_layer = 128
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSource"]
+position = Vector2( -5, 0 )
+rotation = -1.18682
+shape = SubResource( 378 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 26.5 )
