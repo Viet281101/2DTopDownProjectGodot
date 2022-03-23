@@ -4,6 +4,9 @@
 
 ![alt text](assets/gui/keyboard.png) This is a [Godot](https://godotengine.org/) project making for fun and learning, work a little by little in free time after the main courses at the university.
 
+- In progress of making player with finite state machine:
+![alt text](Screencast.mp4)
+
 -----------------------------------------------------------------------------------------
 ### ![alt text](assets/world/decorate/candle/candleB_04.png) Links for the ressources game ![alt text](assets/world/decorate/candle/candleA_03.png): 
 

@@ -36,6 +36,5 @@ func update_look_direction(input_vector):
 		animation_tree.set("parameters/Hurt_2/blend_position", input_vector)
 		animation_tree.set("parameters/Die/blend_position", input_vector)
 		owner.look_direction = input_vector
-		Global.direction = input_vector
 	return input_vector
 
