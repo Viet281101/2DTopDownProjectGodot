@@ -115,7 +115,7 @@ func take_damage_from(damage_source):
 
 func spawn_dust() -> void:
 	var dust: Node2D = DUST_SCENE.instance()
-	dust.position = dust_trail_pos.global_position + Vector2(0, -15)
+	dust.position = dust_trail_pos.global_position + Vector2(0, -20)
 	dust.rotation = Global.direction.angle()
 	if Global.direction.x == -1:
 		dust.get_node("Dust").flip_v = true
