@@ -53,17 +53,23 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Script/Characters/state_machine.gd"
+}, {
+"base": "DamageSource",
+"class": "Sword_Slash",
+"language": "GDScript",
+"path": "res://Script/Effects/sword_slash.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "DamageSource": "",
-"Health": "",
+"Health": "res://assets/gui/heart-ui-nva.png",
 "Monster": "res://assets/characters/skeleton/skeleton_icon.png",
 "Motion": "",
 "OnGround": "",
 "Player": "res://assets/world/decorate/statue_sword.png",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"Sword_Slash": "res://assets/characters/warrior/sword_icon.png"
 }
 
 [application]

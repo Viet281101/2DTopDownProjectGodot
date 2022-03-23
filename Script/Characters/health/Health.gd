@@ -1,6 +1,6 @@
 
 extends Node
-class_name Health
+class_name Health, "res://assets/gui/heart-ui-nva.png"
 
 signal health_changed(new_health)
 signal damage_taken(new_health)

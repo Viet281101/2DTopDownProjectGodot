@@ -1,5 +1,6 @@
 
 extends DamageSource
+class_name Sword_Slash, "res://assets/characters/warrior/sword_icon.png"
 
 enum STATES { IDLE, ATTACK }
 var state = null

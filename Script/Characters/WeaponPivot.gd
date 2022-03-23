@@ -1,6 +1,5 @@
 extends Position2D
 
-
 var z_index_start = 0
 
 func _ready():
