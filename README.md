@@ -4,7 +4,7 @@
 
 ![alt text](assets/gui/keyboard.png) This is a [Godot](https://godotengine.org/) project making for fun and learning, work a little by little in free time after the main courses at the university.
 
-- In progress of making player with finite state machine:
+- In progress of making Player control with finite state machine:
 
 
 https://user-images.githubusercontent.com/77735678/159754609-9ef3a492-45b7-4108-a9b9-7963dd035ea1.mp4

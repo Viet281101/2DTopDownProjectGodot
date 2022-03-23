@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Characters/states/motion/on_ground/on_ground.gd"
 }, {
-"base": "Actor",
-"class": "Player",
-"language": "GDScript",
-"path": "res://Script/Characters/Player.gd"
-}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -58,6 +53,11 @@ _global_script_classes=[ {
 "class": "Sword_Slash",
 "language": "GDScript",
 "path": "res://Script/Effects/sword_slash.gd"
+}, {
+"base": "Actor",
+"class": "Warrior",
+"language": "GDScript",
+"path": "res://Script/Characters/Player.gd"
 } ]
 _global_script_class_icons={
 "Actor": "res://assets/world/decorate/statue_sword.png",
@@ -66,10 +66,10 @@ _global_script_class_icons={
 "Monster": "res://assets/characters/skeleton/skeleton_icon.png",
 "Motion": "",
 "OnGround": "",
-"Player": "",
 "State": "",
 "StateMachine": "",
-"Sword_Slash": "res://assets/characters/warrior/sword_icon.png"
+"Sword_Slash": "res://assets/characters/warrior/sword_icon.png",
+"Warrior": ""
 }
 
 [application]

@@ -7499,7 +7499,7 @@ font_path = "res://assets/fonts/alagard.ttf"
 [sub_resource type="DynamicFont" id=87]
 font_data = SubResource( 86 )
 
-[node name="Player" type="KinematicBody2D" groups=["Player"]]
+[node name="Warrior" type="KinematicBody2D" groups=["Player"]]
 collision_layer = 4
 script = ExtResource( 2 )
 __meta__ = {
@@ -7684,7 +7684,6 @@ align = 1
 valign = 1
 script = ExtResource( 14 )
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="finished" from="StateMachine/Die" to="." method="_on_Die_finished"]
 
 [editable path="HitBox"]

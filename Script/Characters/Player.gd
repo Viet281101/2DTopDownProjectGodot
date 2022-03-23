@@ -1,6 +1,6 @@
 
 extends Actor
-class_name Player
+class_name Warrior
 
 const DUST_SCENE: PackedScene = preload("res://Scene/Effects/Dust.tscn")
 onready var parent: Node = get_parent()
@@ -52,7 +52,8 @@ func _ready():
 	Global.state_active = true
 	Global.player = self
 	animationTree.active = true
-	no_weapon_in_hand()
+	animationPlayer.connect("animation_finished", self, "_on_animation_finished")
+#	no_weapon_in_hand()
 	for state_node in state_machine.get_children():
 		state_node.connect("finished", self, "_change_state")
 	

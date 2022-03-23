@@ -47,3 +47,4 @@ func end_roll():
 
 func _on_DurationTimer_timeout():
 	end_roll()
+
