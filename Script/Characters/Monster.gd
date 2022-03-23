@@ -1,6 +1,6 @@
 
 extends KinematicBody2D
-class_name Monster
+class_name Monster, "res://assets/characters/skeleton/skeleton_icon.png"
 
 signal died
 

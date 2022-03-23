@@ -1,5 +1,6 @@
-extends Node
 
+extends Node
+class_name Health
 
 signal health_changed(new_health)
 signal damage_taken(new_health)

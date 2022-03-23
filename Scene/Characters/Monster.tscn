@@ -82,3 +82,5 @@ anims/RESET = SubResource( 2 )
 anims/stagger = SubResource( 3 )
 
 [node name="InterfaceAncho" type="RemoteTransform2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

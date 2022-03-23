@@ -1,6 +1,6 @@
 
 extends Actor
-class_name Player
+class_name Player, "res://assets/world/decorate/statue_sword.png"
 
 var states_stack = []
 var current_state = null
