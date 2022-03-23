@@ -1,6 +1,9 @@
 
 extends Actor
-class_name Player, "res://assets/world/decorate/statue_sword.png"
+class_name Player
+
+const DUST_SCENE: PackedScene = preload("res://Scene/Effects/Dust.tscn")
+onready var parent: Node = get_parent()
 
 var states_stack = []
 var current_state = null
@@ -45,6 +48,7 @@ onready var states_map = {
 
 func _ready():
 	Global.state_active = true
+	Global.player = self
 	animationTree.active = true
 	for state_node in state_machine.get_children():
 		state_node.connect("finished", self, "_change_state")
@@ -108,6 +112,16 @@ func take_damage_from(damage_source):
 	.take_damage_from(damage_source)
 	hurt_state.knockback_direction = (damage_source.global_position - global_position).normalized()
 	Global.camera.shake(0.4, 2)
+
+func spawn_dust() -> void:
+	var dust: Node2D = DUST_SCENE.instance()
+	dust.position = dust_trail_pos.global_position + Vector2(0, -15)
+	dust.rotation = Global.direction.angle()
+	if Global.direction.x == -1:
+		dust.get_node("Dust").flip_v = true
+	else:
+		dust.get_node("Dust").flip_v = false
+	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
 
 func _on_animation_finished(anim_name):
 	current_state._on_animation_finished(anim_name)

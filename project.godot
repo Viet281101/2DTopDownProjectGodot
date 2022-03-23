@@ -60,13 +60,13 @@ _global_script_classes=[ {
 "path": "res://Script/Effects/sword_slash.gd"
 } ]
 _global_script_class_icons={
-"Actor": "",
+"Actor": "res://assets/world/decorate/statue_sword.png",
 "DamageSource": "",
 "Health": "res://assets/gui/heart-ui-nva.png",
 "Monster": "res://assets/characters/skeleton/skeleton_icon.png",
 "Motion": "",
 "OnGround": "",
-"Player": "res://assets/world/decorate/statue_sword.png",
+"Player": "",
 "State": "",
 "StateMachine": "",
 "Sword_Slash": "res://assets/characters/warrior/sword_icon.png"

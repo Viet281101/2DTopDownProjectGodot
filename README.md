@@ -2,9 +2,7 @@
 ## ![ale text](assets/world/decorate/statue_sword.png) This is a story inside the castle. ![alt text](murray.png)
 
 
-![alt text](assets/gui/keyboard.png) This is a [Godot](https://godotengine.org/) project making for fun and learning, work a bit by bit in free time after the main courses at the university.
-
-![alt text](assets/characters/skeleton/skeleton_icon.png)
+![alt text](assets/gui/keyboard.png) This is a [Godot](https://godotengine.org/) project making for fun and learning, work a little by little in free time after the main courses at the university.
 
 -----------------------------------------------------------------------------------------
 ### ![alt text](assets/world/decorate/candle/candleB_04.png) Links for the ressources game ![alt text](assets/world/decorate/candle/candleA_03.png): 

@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Actor
+class_name Actor, "res://assets/world/decorate/statue_sword.png"
 
 signal position_changed(new_position)
 
