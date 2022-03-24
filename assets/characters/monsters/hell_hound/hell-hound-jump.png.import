@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hit.png-fcfb3a18c0238e31af1fd09431cb315f.stex"
+path="res://.import/hell-hound-jump.png-61803cfc6670ca9d6159a15785984531.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/monsters/hit.png"
-dest_files=[ "res://.import/hit.png-fcfb3a18c0238e31af1fd09431cb315f.stex" ]
+source_file="res://assets/characters/monsters/hell_hound/hell-hound-jump.png"
+dest_files=[ "res://.import/hell-hound-jump.png-61803cfc6670ca9d6159a15785984531.stex" ]
 
 [params]
 

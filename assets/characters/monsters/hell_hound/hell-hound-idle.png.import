@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/attack-A.png-e5c50ba3ee722358e8d270ef6fc82cb6.stex"
+path="res://.import/hell-hound-idle.png-ef08bc38e85822f4a8cffa708711c5a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/monsters/attack-A.png"
-dest_files=[ "res://.import/attack-A.png-e5c50ba3ee722358e8d270ef6fc82cb6.stex" ]
+source_file="res://assets/characters/monsters/hell_hound/hell-hound-idle.png"
+dest_files=[ "res://.import/hell-hound-idle.png-ef08bc38e85822f4a8cffa708711c5a7.stex" ]
 
 [params]
 

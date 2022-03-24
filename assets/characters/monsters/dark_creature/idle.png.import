@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/attack-B.png-a83f724706d0076e7ebdbcf8c3fd5a7f.stex"
+path="res://.import/idle.png-5a342f1ba2936333dd442d156a0b5a1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/monsters/attack-B.png"
-dest_files=[ "res://.import/attack-B.png-a83f724706d0076e7ebdbcf8c3fd5a7f.stex" ]
+source_file="res://assets/characters/monsters/dark_creature/idle.png"
+dest_files=[ "res://.import/idle.png-5a342f1ba2936333dd442d156a0b5a1a.stex" ]
 
 [params]
 

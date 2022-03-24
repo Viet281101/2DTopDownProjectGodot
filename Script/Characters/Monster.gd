@@ -17,8 +17,9 @@ onready var stats = $Stats
 #const Actor = preload("res://Script/Characters/Actor.gd")
 var target = null # Actor
 
-var start_position = Vector2()
-var velocity = Vector2()
+var start_position : Vector2 = Vector2()
+var mov_direction: Vector2 = Vector2.ZERO
+var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
 	set_as_toplevel(true)

@@ -52,7 +52,7 @@ func start_dash(sprite, duration, direction):
 	owner.get_node("HitBox").set_active(false)
 	self.sprite = sprite
 	sprite.material.set_shader_param("mix_weight", 0.7)
-	sprite.material.set_shader_param("whiten", true)
+	sprite.material.set_shader_param("whiten", false)
 	
 	duration_timer.wait_time = duration
 	duration_timer.start()

@@ -19,6 +19,7 @@ https://user-images.githubusercontent.com/77735678/159754609-9ef3a492-45b7-4108-
 - [Hero and Opponents Animation](https://itch.io/queue/c/2326617/pixel-pack?game_id=377218).
 - [Sword Skeleton Pixel Art Character](https://itch.io/queue/c/2326617/pixel-pack?game_id=567091).
 - [Animated pixel art skeleton](https://itch.io/queue/c/2326617/pixel-pack?game_id=914648).
+- [Gothic Vania monster](https://ansimuz.itch.io/gothicvania-patreon-collection?click_to_load=true&embed)
 - [Wizard pack](https://luizmelo.itch.io/wizard-pack)
 
 

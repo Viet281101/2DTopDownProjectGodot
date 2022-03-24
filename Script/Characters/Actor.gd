@@ -5,7 +5,7 @@ signal position_changed(new_position)
 
 onready var health = $Health
 
-var look_direction = Vector2(1, 0) setget set_look_direction
+var look_direction : Vector2 = Vector2(1, 0) setget set_look_direction
 
 func take_damage_from(damage_source):
 	health.take_damage(damage_source.damage)
