@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scene/Characters/Health/HitBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Characters/Health/Stats.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Script/Characters/enemies/Shriek.gd" type="Script" id=17]
 [ext_resource path="res://Script/Characters/enemies/MoveBack.gd" type="Script" id=18]
 [ext_resource path="res://Script/Characters/enemies/SpiritAttack.gd" type="Script" id=19]
+[ext_resource path="res://Script/Characters/enemies/Vanish.gd" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 4 )
@@ -813,6 +814,7 @@ script = ExtResource( 19 )
 wait_time = 0.2
 
 [node name="Vanish" type="Node" parent="StateMachine"]
+script = ExtResource( 20 )
 
 [node name="ExplodeTimer" type="Timer" parent="StateMachine/Vanish"]
 wait_time = 0.15
@@ -830,5 +832,7 @@ polygon = PoolVector2Array( -7, -18, -9, -8, -13, -1, -12, 4, -8, 14, -4, 20, 0,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSource"]
 shape = SubResource( 10 )
 disabled = true
+
+[connection signal="timeout" from="StateMachine/Vanish/ExplodeTimer" to="StateMachine/Vanish" method="_on_ExplodeTimer_timeout"]
 
 [editable path="HitBox"]

@@ -52,13 +52,13 @@ func change_phase(new_phase):
 	var anim_player = owner.get_node('AnimationPlayer')
 	match new_phase:
 		1:
-			anim_player.playback_speed = 0.8
+			anim_player.playback_speed = 0.7
 		2:
-			anim_player.playback_speed = 1.0
+			anim_player.playback_speed = 0.9
 		3:
-			anim_player.playback_speed = 1.2
+			anim_player.playback_speed = 1.1
 		4:
-			anim_player.playback_speed = 0.8
+			anim_player.playback_speed = 0.7
 	emit_signal("phase_changed", new_phase)
 	
 
