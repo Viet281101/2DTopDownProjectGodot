@@ -1,6 +1,6 @@
 
 extends Actor
-class_name Warrior
+class_name Warrior, "res://assets/characters/warrior/helmet_ego.png"
 
 const DUST_SCENE: PackedScene = preload("res://Scene/Effects/Dust.tscn")
 onready var parent: Node = get_parent()

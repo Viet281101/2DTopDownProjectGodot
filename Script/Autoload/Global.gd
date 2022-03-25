@@ -38,6 +38,10 @@ signal state_changed(states_stack)
 signal direction_changed(new_direction)
 signal died()
 
+#### Enemies Signals
+signal charge_direction_set(direction)
+signal touch_wall()
+
 func _ready():
 	sword_time.connect("timeout", self, "_on_SwordTime_timeout")
 

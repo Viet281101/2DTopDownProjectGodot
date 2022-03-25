@@ -81,7 +81,7 @@ _global_script_class_icons={
 "State": "",
 "StateMachine": "",
 "Sword_Slash": "res://assets/characters/warrior/sword_icon.png",
-"Warrior": ""
+"Warrior": "res://assets/characters/warrior/helmet_ego.png"
 }
 
 [application]
