@@ -6,9 +6,7 @@
 
 - In progress of making Player control with finite state machine:
 
-
-https://user-images.githubusercontent.com/77735678/159754609-9ef3a492-45b7-4108-a9b9-7963dd035ea1.mp4
-
+https://user-images.githubusercontent.com/77735678/160171836-e471d914-6eaf-4f42-b9e9-1b8090b24814.mp4
 
 
 -----------------------------------------------------------------------------------------
