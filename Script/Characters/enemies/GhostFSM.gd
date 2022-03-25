@@ -26,20 +26,28 @@ func go_to_next_state(state_override=null):
 
 func _decide_on_next_state():
 	# Battle start
-	pass
+	if current_state == null:
+		return $Apear
+	if current_state == $Apear:
+		return $NormalSequence
+
+	if phase == 1:
+		if current_state == $NormalSequence:
+			sequence_cycles += 1
+			
 
 func change_phase(new_phase):
 	phase = new_phase
 	var anim_player = owner.get_node('AnimationPlayer')
 	match new_phase:
 		1:
-			anim_player.playback_speed = 1.0
+			anim_player.playback_speed = 0.8
 		2:
-			anim_player.playback_speed = 1.1
+			anim_player.playback_speed = 1.0
 		3:
 			anim_player.playback_speed = 1.2
 		4:
-			anim_player.playback_speed = 1.0
+			anim_player.playback_speed = 0.8
 	emit_signal("phase_changed", new_phase)
 	
 
