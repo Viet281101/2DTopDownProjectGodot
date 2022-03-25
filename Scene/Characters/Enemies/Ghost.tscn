@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scene/Characters/Health/HitBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Characters/Health/Stats.tscn" type="PackedScene" id=2]
@@ -13,6 +13,11 @@
 [ext_resource path="res://Script/Characters/enemies/Apear.gd" type="Script" id=11]
 [ext_resource path="res://Script/Characters/enemies/NormalSequence.gd" type="Script" id=12]
 [ext_resource path="res://Script/Characters/enemies/Idle.gd" type="Script" id=13]
+[ext_resource path="res://Script/Characters/enemies/Sequence.gd" type="Script" id=14]
+[ext_resource path="res://Script/Characters/enemies/Prepare.gd" type="Script" id=15]
+[ext_resource path="res://Script/Characters/enemies/InvisibleMove.gd" type="Script" id=16]
+[ext_resource path="res://Script/Characters/enemies/Shriek.gd" type="Script" id=17]
+[ext_resource path="res://Script/Characters/enemies/MoveBack.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 4 )
@@ -625,17 +630,22 @@ script = ExtResource( 10 )
 [node name="Timer" type="Timer" parent="StateMachine/NormalSequence/Wander"]
 
 [node name="ChargeSequence" type="Node" parent="StateMachine"]
+script = ExtResource( 14 )
 
 [node name="Prepare" type="Node" parent="StateMachine/ChargeSequence"]
+script = ExtResource( 15 )
 
 [node name="InvisibleMove" type="Node" parent="StateMachine/ChargeSequence"]
+script = ExtResource( 16 )
 
 [node name="DurationTimer" type="Timer" parent="StateMachine/ChargeSequence/InvisibleMove"]
 one_shot = true
 
 [node name="Shriek" type="Node" parent="StateMachine/ChargeSequence"]
+script = ExtResource( 17 )
 
 [node name="MoveBack" type="Node" parent="StateMachine/ChargeSequence"]
+script = ExtResource( 18 )
 
 [node name="SpiritAttack" type="Node" parent="StateMachine"]
 
