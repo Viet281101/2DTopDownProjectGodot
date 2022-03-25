@@ -34,6 +34,13 @@ func _decide_on_next_state():
 	if phase == 1:
 		if current_state == $NormalSequence:
 			sequence_cycles += 1
+			if sequence_cycles < 2:
+				return $NormalSequence
+			else:
+				sequence_cycles = 0
+				return $SpiritAttack
+		if current_state == $SpiritAttack:
+			return $NormalSequence
 			
 
 func change_phase(new_phase):
