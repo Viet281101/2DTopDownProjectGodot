@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Characters/health/DamageSource.gd"
 }, {
-"base": "Monster",
-"class": "Ghost",
-"language": "GDScript",
-"path": "res://Script/Characters/enemies/Ghost.gd"
-}, {
 "base": "Node",
 "class": "Health",
 "language": "GDScript",
@@ -43,11 +38,6 @@ _global_script_classes=[ {
 "class": "OnGround",
 "language": "GDScript",
 "path": "res://Script/Characters/states/motion/on_ground/on_ground.gd"
-}, {
-"base": "State",
-"class": "Sepquence",
-"language": "GDScript",
-"path": "res://Script/Characters/enemies/Sequence.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -72,12 +62,10 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Actor": "res://assets/world/decorate/statue_sword.png",
 "DamageSource": "",
-"Ghost": "res://assets/characters/monsters/ghost/ghost_icon.png",
 "Health": "res://assets/gui/heart-ui-nva.png",
 "Monster": "res://assets/characters/skeleton/skeleton_icon.png",
 "Motion": "",
 "OnGround": "",
-"Sepquence": "",
 "State": "",
 "StateMachine": "",
 "Sword_Slash": "res://assets/characters/warrior/sword_icon.png",
