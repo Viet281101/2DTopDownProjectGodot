@@ -9,3 +9,9 @@ var velocity = Vector2()
 
 func enter():
 	owner.get_node('AnimationPlayer').play('idle')
+
+func update(delta):
+	velocity = Global.arrive_to(velocity, owner.global_position, owner.start_global_position, MASS, SLOW_RADIUS, MAX_SPEED)
+	owner.move_and_slide(velocity)
+	if owner.global_position.distance_to(owner.start_global_position) < ARRIVE_DISTANCE:
+		emit_signal('finished')

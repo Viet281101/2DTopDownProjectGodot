@@ -72,11 +72,7 @@ func arrive_to(velocity, position, target_position, mass=DEFAULT_MASS, slow_radi
 
 	return velocity + steering
 
-func follow(velocity, 
-			position,
-			target_position,
-			max_speed,
-			mass=DEFAULT_MASS):
+func follow(velocity, position, target_position, max_speed, mass=DEFAULT_MASS):
 	var desired_velocity = (target_position - position).normalized() * max_speed
 
 #	var push = calculate_avoid_force(desired_velocity)

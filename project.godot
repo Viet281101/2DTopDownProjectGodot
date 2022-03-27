@@ -89,6 +89,9 @@ _global_script_class_icons={
 config/name="Undead Emperor"
 config/description="At the ancient ruins below the abandoned castle, that was the residence of the ancient kingdom. It is a place where death is worshiped above all their gods."
 run/main_scene="res://Main.tscn"
+boot_splash/image="res://assets/world/old-dark-castle-interior-background.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://murray.png"
 
 [autoload]
@@ -197,4 +200,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

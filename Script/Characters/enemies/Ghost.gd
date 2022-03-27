@@ -14,6 +14,7 @@ func _ready():
 	start_global_position = global_position
 	health_node.connect("health_changed", self, "_on_Health_health_changed")
 	health_node.connect("health_depleted", self, "_on_Health_health_depleted")
+#	start()
 
 func start():
 	state_machine.start()

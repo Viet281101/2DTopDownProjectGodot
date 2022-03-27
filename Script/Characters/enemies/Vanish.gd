@@ -5,7 +5,7 @@ export(float) var MAX_RADIUS = 300.0
 export(PackedScene) var Explosion
 
 func enter():
-	owner.get_node('AnimationPlayer').play('die')
+	owner.get_node('AnimationPlayer').play('vanish')
 	$ExplodeTimer.start()
 
 func _on_ExplodeTimer_timeout():
@@ -25,5 +25,5 @@ func calculate_random_offset():
 
 func _on_animation_finished(anim_name):
 	$ExplodeTimer.stop()
-	assert(anim_name == 'die')
+	assert(anim_name == 'vanish')
 	get_tree().create_timer(0.6).connect("timeout", self, 'emit_signal', ['finished'])
