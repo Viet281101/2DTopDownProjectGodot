@@ -47,8 +47,8 @@ shader_param/whiten = false
 shader_param/mix_weight = 1.0
 
 [sub_resource type="CapsuleShape2D" id=378]
-radius = 7.6
-height = 38.0
+radius = 4.5
+height = 30.0
 
 [sub_resource type="CapsuleShape2D" id=88]
 radius = 5.0
@@ -7670,8 +7670,8 @@ collision_layer = 128
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( -5, 0 )
-rotation = -1.18682
+position = Vector2( 6, -1 )
+rotation = 1.09956
 shape = SubResource( 378 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

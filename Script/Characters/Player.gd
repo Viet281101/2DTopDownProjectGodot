@@ -69,15 +69,9 @@ func _process(delta):
 		current_state.update(delta)
 
 func _physics_process(delta):
+	body_nodes_pos()
 	if Global.state_active:
 		current_state.physics_update(delta)
-	
-	Global.is_dashing = dash_state.is_dashing()
-	Global.is_rolling = roll_state.is_rolling()
-	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
-	player_col.global_position = body_pivot.global_position + Vector2(0, 26)
-	hurtbox.global_position = body_pivot.global_position + Vector2(0, 6)
-	player_col.rotation_degrees = 90
 
 func _input(event):
 	if Global.state_active:
@@ -139,6 +133,14 @@ func has_weapon_in_hand():
 	body_weapon.visible = true
 	Global.can_attack = true
 	body.visible = false
+
+func body_nodes_pos():
+	Global.is_dashing = dash_state.is_dashing()
+	Global.is_rolling = roll_state.is_rolling()
+	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
+	player_col.global_position = body_pivot.global_position + Vector2(0, 26)
+	hurtbox.global_position = body_pivot.global_position + Vector2(0, 6)
+	player_col.rotation_degrees = 90
 
 func _on_animation_finished(anim_name):
 	current_state._on_animation_finished(anim_name)
