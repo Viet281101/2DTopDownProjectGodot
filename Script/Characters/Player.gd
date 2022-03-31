@@ -10,7 +10,7 @@ var current_state = null
 
 ##### Player nodes:
 export (NodePath) onready var player_col = get_node(player_col) as CollisionShape2D
-export (NodePath) onready var hitbox = get_node(hitbox) as CollisionShape2D
+export (NodePath) onready var hurtbox = get_node(hurtbox) as CollisionShape2D
 export (NodePath) onready var body_pivot = get_node(body_pivot) as Position2D
 export (NodePath) onready var body = get_node(body) as Sprite
 export (NodePath) onready var body_weapon = get_node(body_weapon) as Sprite
@@ -76,7 +76,7 @@ func _physics_process(delta):
 	Global.is_rolling = roll_state.is_rolling()
 	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
 	player_col.global_position = body_pivot.global_position + Vector2(0, 26)
-	hitbox.global_position = body_pivot.global_position + Vector2(0, 6)
+	hurtbox.global_position = body_pivot.global_position + Vector2(0, 6)
 	player_col.rotation_degrees = 90
 
 func _input(event):
@@ -111,11 +111,10 @@ func reset(target_global_position):
 	.reset(target_global_position)
 
 func take_damage_from(damage_source):
-	if state_machine.current_state == hurt_state:
-		return
 	.take_damage_from(damage_source)
 	hurt_state.knockback_direction = (damage_source.global_position - global_position).normalized()
-	Global.camera.shake(0.4, 2)
+	health.start_invincibility(0.4)
+	Global.camera.shake(1, 0.4)
 
 func spawn_dust() -> void:
 	var dust: Node2D = DUST_SCENE.instance()

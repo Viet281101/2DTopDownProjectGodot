@@ -38,6 +38,9 @@ signal state_changed(states_stack)
 signal direction_changed(new_direction)
 signal died()
 
+signal invincible_started
+signal invincible_ended
+
 #### Enemies Signals
 signal charge_direction_set(direction)
 signal touch_wall()

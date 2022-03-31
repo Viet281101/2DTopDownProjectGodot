@@ -14,15 +14,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Characters/Actor.gd"
 }, {
-"base": "Area2D",
-"class": "DamageSource",
-"language": "GDScript",
-"path": "res://Script/Characters/health/DamageSource.gd"
-}, {
 "base": "Node",
 "class": "Health",
 "language": "GDScript",
 "path": "res://Script/Characters/health/Health.gd"
+}, {
+"base": "Area2D",
+"class": "HitBox",
+"language": "GDScript",
+"path": "res://Script/Characters/health/HitBox.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Monster",
@@ -49,7 +49,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Characters/state_machine.gd"
 }, {
-"base": "DamageSource",
+"base": "HitBox",
 "class": "Sword_Slash",
 "language": "GDScript",
 "path": "res://Script/Effects/sword_slash.gd"
@@ -61,8 +61,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "res://assets/world/decorate/statue_sword.png",
-"DamageSource": "",
 "Health": "res://assets/gui/heart-ui-nva.png",
+"HitBox": "",
 "Monster": "res://assets/characters/skeleton/skeleton_icon.png",
 "Motion": "",
 "OnGround": "",

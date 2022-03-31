@@ -19,6 +19,23 @@ const POISON_DAMAGE = 1
 var poison_cycles = 0
 
 export (NodePath) onready var poison_timer = get_node(poison_timer) as Timer
+onready var timer = $Timer
+
+var invincible = false setget set_invincible
+
+func set_invincible(value):
+	invincible = value
+	if invincible == true:
+		Global.emit_signal("invincible_started")
+	else:
+		Global.emit_signal("invincible_ended")
+
+func start_invincibility(duration):
+	self.invincible = true
+	timer.start(duration)
+
+func _on_Timer_timeout():
+	self.invincible = false
 
 func _ready():
 	health = max_health
@@ -77,5 +94,4 @@ func _on_PoisonTimer_timeout():
 		_change_status(Global.STATUS_NONE)
 		return
 	poison_timer.start()
-
 
