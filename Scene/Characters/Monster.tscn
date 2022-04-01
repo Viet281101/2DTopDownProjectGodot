@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Script/Shader/white_color.shader" type="Shader" id=1]
 [ext_resource path="res://Scene/Characters/Health/HurtBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Characters/Health/Stats.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Script/Characters/Monster.gd" type="Script" id=4]
+[ext_resource path="res://Scene/Characters/Health/HitBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -70,8 +71,6 @@ script = ExtResource( 4 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 
-[node name="HitBox" parent="." instance=ExtResource( 2 )]
-
 [node name="Skin" type="Position2D" parent="."]
 
 [node name="BodyPivot" type="Position2D" parent="Skin"]
@@ -84,3 +83,7 @@ anims/stagger = SubResource( 3 )
 [node name="InterfaceAncho" type="RemoteTransform2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="HitBox" parent="." instance=ExtResource( 5 )]
+
+[node name="HurtBox" parent="." instance=ExtResource( 2 )]

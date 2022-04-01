@@ -41,5 +41,5 @@ func take_damage_from(damage_source):
 func set_active(value):
 	active = value
 	set_physics_process(value)
+	$HurtBox.set_active(value)
 	$HitBox.set_active(value)
-	$DamageSource.set_active(value)

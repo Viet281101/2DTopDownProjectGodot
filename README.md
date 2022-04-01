@@ -27,6 +27,7 @@ https://user-images.githubusercontent.com/77735678/160171836-e471d914-6eaf-4f42-
 - [Evil Dungeon](https://opengameart.org/content/evil-dungeon-asset-pack).
 - [Castle Tiles](https://opengameart.org/content/castle-tiles-for-rpgs).
 - [Within the abandoned castle](https://opengameart.org/content/within-the-abandoned-castle).
+- [Gothic Vania monster](https://opengameart.org/content/gothicvania-patreons-collection).
 
 
 
