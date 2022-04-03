@@ -62,10 +62,8 @@ func state_cooldown(cooldown):
 	state_active = true
 
 func arrive_to(velocity, position, target_position, mass=DEFAULT_MASS, slow_radius=DEFAULT_SLOW_RADIUS, max_speed=DEFAULT_MAX_SPEED):
-	"""
-	Calculates and returns a new velocity with the arrive steering behavior arrived based on
-	an existing velocity (Vector2), the object's current and target positions (Vector2)
-	"""
+	### Calculates and returns a new velocity with the arrive steering behavior arrived based on an existing velocity (Vector2), the object's current and target positions (Vector2)
+	
 	var distance_to_target = position.distance_to(target_position)
 
 	var desired_velocity = (target_position - position).normalized() * max_speed

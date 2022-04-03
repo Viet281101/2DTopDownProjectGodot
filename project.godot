@@ -183,6 +183,8 @@ ui_roll={
 2d_physics/layer_8="Weapon"
 2d_physics/layer_9="NPC"
 2d_physics/layer_10="HurtBoxNPC"
+2d_physics/layer_11="WeaponEnemy"
+2d_physics/layer_12="WeaponNPC"
 
 [physics]
 
