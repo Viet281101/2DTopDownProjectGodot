@@ -177,10 +177,12 @@ ui_roll={
 2d_physics/layer_2="Object"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemy"
-2d_physics/layer_5="HitBoxPlayer"
-2d_physics/layer_6="HitBoxEnemy"
-2d_physics/layer_7="DamageArea"
+2d_physics/layer_5="HurtBoxPlayer"
+2d_physics/layer_6="HurtBoxEnemy"
+2d_physics/layer_7="HitBox"
 2d_physics/layer_8="Weapon"
+2d_physics/layer_9="NPC"
+2d_physics/layer_10="HurtBoxNPC"
 
 [physics]
 
