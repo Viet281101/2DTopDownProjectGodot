@@ -56,6 +56,7 @@ func physics_update(delta):
 			animation_state.travel("Idle")
 		if input_direction:
 			animation_state.travel("Walk")
+		Global.on_ground = true
 		emit_signal("finished", "previous")
 
 func move_horizontally(delta, direction):
