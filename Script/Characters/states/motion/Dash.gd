@@ -49,7 +49,7 @@ func instance_ghost():
 	
 
 func start_dash(sprite, duration, direction):
-	owner.get_node("HitBox").set_active(false)
+	owner.get_node("HurtBox").set_active(false)
 	self.sprite = sprite
 	sprite.material.set_shader_param("mix_weight", 0.7)
 	sprite.material.set_shader_param("whiten", false)
@@ -83,7 +83,7 @@ func end_dash():
 	if input_direction:
 		animation_state.travel("Walk")
 	emit_signal("finished", "previous")
-	owner.get_node("HitBox").set_active(true)
+	owner.get_node("HurtBox").set_active(true)
 	Global.can_dash = true
 
 func _on_DurationTimer_timeout():

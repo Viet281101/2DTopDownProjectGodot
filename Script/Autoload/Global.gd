@@ -8,7 +8,7 @@ const DEFAULT_MAX_SPEED = 300.0
 enum { STATUS_NONE, STATUS_INVINCIBLE, STATUS_POISONED, STATUS_STUNNED }
 
 var camera = null ## Global.camera.shake(time, shake)
-var player = null
+var player setget ,_get_player
 var can_dash = true
 var can_roll = true
 var is_dashing
@@ -51,6 +51,9 @@ func _ready():
 func _process(delta):
 	if sword_count >= 4:
 		sword_count = 0
+
+func _get_player():
+	return player if is_instance_valid(player) else null
 
 func _on_SwordTime_timeout():
 	sword_count = 0
