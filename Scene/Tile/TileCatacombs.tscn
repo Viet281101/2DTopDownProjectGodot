@@ -1,9 +1,11 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Scene/Tile/levbuild_object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/world/decorate/candle/candleA.tres" type="Texture" id=2]
 [ext_resource path="res://assets/world/decorate/decorative.png" type="Texture" id=3]
 [ext_resource path="res://assets/world/tile/mainlevbuild.png" type="Texture" id=4]
+[ext_resource path="res://assets/world/decorate/candle/candleB.tres" type="Texture" id=5]
+[ext_resource path="res://assets/world/decorate/torche/torche.tres" type="Texture" id=6]
 
 [sub_resource type="TileSet" id=23]
 0/name = "mainlevbuild.png 0"
@@ -1397,7 +1399,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 48, 0, 48 )
 points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 
 [sub_resource type="ConvexPolygonShape2D" id=59]
-points = PoolVector2Array( 2.65407, 0, 24, 0, 24, 48, 2.37498, 48 )
+points = PoolVector2Array( 2.89507, 0, 24, 0, 24, 48, 2.89507, 48 )
 
 [sub_resource type="ConvexPolygonShape2D" id=87]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 48, 0, 48 )
@@ -1451,7 +1453,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 24, 0, 24 )
 points = PoolVector2Array( 0, 0, 16, 0, 16, 72, 0, 72 )
 
 [sub_resource type="ConvexPolygonShape2D" id=79]
-points = PoolVector2Array( 2.37498, 1.91121, 16, 0, 16, 24, 2.65407, 24 )
+points = PoolVector2Array( 2.37498, 1.91121, 16, 0, 16, 24, 2.19738, 24 )
 
 [sub_resource type="ConvexPolygonShape2D" id=80]
 points = PoolVector2Array( 0, 0, 24, 0, 24, 16, 0, 16 )
@@ -1870,7 +1872,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 87 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-16/z_index = 0
+16/z_index = -1
 17/name = "mainlevbuild.png 17"
 17/texture = ExtResource( 4 )
 17/tex_offset = Vector2( 0, 0 )
@@ -3482,20 +3484,50 @@ points = PoolVector2Array( 40, 32, 6.07509, 32, 6.47697, 11.198, 40.2347, 10.796
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 50/z_index = 0
-51/name = "candleA.tres 51"
-51/texture = ExtResource( 2 )
-51/tex_offset = Vector2( 0, 0 )
-51/modulate = Color( 1, 1, 1, 1 )
-51/region = Rect2( 0, 0, 8, 16 )
-51/tile_mode = 0
-51/occluder_offset = Vector2( 0, 0 )
-51/navigation_offset = Vector2( 0, 0 )
-51/shape_offset = Vector2( 0, 0 )
-51/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-51/shape_one_way = false
-51/shape_one_way_margin = 0.0
-51/shapes = [  ]
-51/z_index = -1
+
+[sub_resource type="TileSet" id=98]
+0/name = "candleA.tres 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 7, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "candleB.tres 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 13, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "torche.tres 2"
+2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
 
 [node name="TileMap" type="YSort"]
 
@@ -3539,3 +3571,9 @@ cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 collision_mask = 0
 format = 1
+
+[node name="torche" type="TileMap" parent="Terrain"]
+tile_set = SubResource( 98 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 262160, 2, 0, 262166, 2, 0 )
