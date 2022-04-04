@@ -2471,7 +2471,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape": SubResource( 94 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-46/z_index = 0
+46/z_index = 1
 47/name = "mainlevbuild.png 47"
 47/texture = ExtResource( 4 )
 47/tex_offset = Vector2( 0, 0 )
