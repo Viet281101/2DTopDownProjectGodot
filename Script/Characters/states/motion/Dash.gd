@@ -26,7 +26,7 @@ func physics_update(delta):
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
 	
-	var speed = dash_speed if self.is_dashing() else move_speed
+	var speed = dash_speed + Global.warrior_speed if self.is_dashing() else move_speed + Global.warrior_speed
 	
 	var velocity = input_direction.normalized() * speed * delta
 	owner.move_and_slide(velocity)

@@ -9,6 +9,7 @@ enum { STATUS_NONE, STATUS_INVINCIBLE, STATUS_POISONED, STATUS_STUNNED }
 
 var camera = null ## Global.camera.shake(time, shake)
 var player setget ,_get_player
+var warrior_speed = 0
 var can_dash = true
 var can_roll = true
 var is_dashing

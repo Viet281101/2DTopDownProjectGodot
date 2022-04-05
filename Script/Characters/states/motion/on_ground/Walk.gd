@@ -22,7 +22,7 @@ func physics_update(delta):
 		emit_signal("finished", "idle")
 	update_look_direction(input_direction)
 
-	speed = MAX_WALK_SPEED
+	speed = MAX_WALK_SPEED + Global.warrior_speed
 	var collision_info = move(speed, input_direction)
 	if not collision_info:
 		return

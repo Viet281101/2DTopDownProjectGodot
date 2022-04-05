@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://Scene/Tile/levbuild_object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/world/decorate/candle/candleA.tres" type="Texture" id=2]
@@ -903,10 +903,10 @@ points = PoolVector2Array( 0, 8, 32, 8, 32, 48, 0, 48 )
 points = PoolVector2Array( 0, 16, 16, 16, 16, 64, 0, 64 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
+points = PoolVector2Array( 0, 28, 16, 28, 16, 80, 0, 80 )
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
-points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
+points = PoolVector2Array( 0, 28, 16, 28, 16, 80, 0, 80 )
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 0, 24, 16, 24, 16, 72, 0, 72 )
@@ -933,13 +933,13 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 56, 0, 56 )
 points = PoolVector2Array( 0, 8, 32, 8, 32, 56, 0, 56 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
-points = PoolVector2Array( 0, 32, 64, 32, 64, 72, 0, 72 )
+points = PoolVector2Array( 0, 28, 64, 28, 64, 72, 0, 72 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
+points = PoolVector2Array( 0, 28, 16, 28, 16, 80, 0, 80 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 0, 32, 16, 32, 16, 80, 0, 80 )
+points = PoolVector2Array( 0, 28, 16, 28, 16, 80, 0, 80 )
 
 [sub_resource type="TileSet" id=21]
 0/name = "mainlevbuild.png 0"
@@ -1465,7 +1465,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 10.4025, 16, 10.4025, 9.16631, 0, 9.16631 )
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
-points = PoolVector2Array( 2.28061, 0, 24, 0, 24, 16, 2.55969, 16 )
+points = PoolVector2Array( 2.28061, 0, 24, 0, 24, 16, 2.51318, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=85]
 points = PoolVector2Array( 0, 0, 24, 0, 24, 8, 0, 8 )
@@ -1502,6 +1502,15 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=67]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 24, 0, 24 )
+
+[sub_resource type="ConvexPolygonShape2D" id=99]
+points = PoolVector2Array( 2.51318, 0, 8, 0, 8, 64, 2.51318, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=100]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=101]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=68]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 24, 0, 24 )
@@ -2538,6 +2547,69 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 49/z_index = 0
+50/name = "mainlevbuild.png 50"
+50/texture = ExtResource( 4 )
+50/tex_offset = Vector2( 0, 0 )
+50/modulate = Color( 1, 1, 1, 1 )
+50/region = Rect2( 24, 112, 8, 64 )
+50/tile_mode = 0
+50/occluder_offset = Vector2( 0, 0 )
+50/navigation_offset = Vector2( 0, 0 )
+50/shape_offset = Vector2( 0, 0 )
+50/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+50/shape = SubResource( 99 )
+50/shape_one_way = false
+50/shape_one_way_margin = 1.0
+50/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 99 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+50/z_index = 0
+51/name = "mainlevbuild.png 51"
+51/texture = ExtResource( 4 )
+51/tex_offset = Vector2( 0, 0 )
+51/modulate = Color( 1, 1, 1, 1 )
+51/region = Rect2( 240, 16, 16, 16 )
+51/tile_mode = 0
+51/occluder_offset = Vector2( 0, 0 )
+51/navigation_offset = Vector2( 0, 0 )
+51/shape_offset = Vector2( 0, 0 )
+51/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+51/shape = SubResource( 100 )
+51/shape_one_way = false
+51/shape_one_way_margin = 1.0
+51/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 100 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+51/z_index = 0
+52/name = "mainlevbuild.png 52"
+52/texture = ExtResource( 4 )
+52/tex_offset = Vector2( 0, 0 )
+52/modulate = Color( 1, 1, 1, 1 )
+52/region = Rect2( 64, 16, 16, 16 )
+52/tile_mode = 0
+52/occluder_offset = Vector2( 0, 0 )
+52/navigation_offset = Vector2( 0, 0 )
+52/shape_offset = Vector2( 0, 0 )
+52/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+52/shape = SubResource( 101 )
+52/shape_one_way = false
+52/shape_one_way_margin = 1.0
+52/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 101 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+52/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=29]
 points = PoolVector2Array( 0, 24, 16, 24, 16, 48, 0, 48 )
@@ -3553,6 +3625,7 @@ format = 1
 
 [node name="levbuild_object" parent="Terrain" instance=ExtResource( 1 )]
 tile_set = SubResource( 21 )
+cell_size = Vector2( 8, 8 )
 cell_y_sort = true
 collision_mask = 0
 
@@ -3567,7 +3640,7 @@ tile_data = PoolIntArray( 0, 28, 0, 8, 31, 0, 9, 28, 0, 16, 31, 0, 18, 27, 0, 22
 
 [node name="decor" type="TileMap" parent="Terrain"]
 tile_set = SubResource( 34 )
-cell_size = Vector2( 16, 16 )
+cell_size = Vector2( 8, 8 )
 cell_y_sort = true
 collision_mask = 0
 format = 1
