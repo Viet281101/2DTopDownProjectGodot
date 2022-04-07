@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://Scene/Tile/levbuild_object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/world/decorate/candle/candleA.tres" type="Texture" id=2]
@@ -2128,6 +2128,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=101]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
+[sub_resource type="ConvexPolygonShape2D" id=102]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 16, 0, 16 )
+
 [sub_resource type="ConvexPolygonShape2D" id=68]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 24, 0, 24 )
 
@@ -3226,6 +3229,27 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 52/z_index = 0
+53/name = "mainlevbuild.png 53"
+53/texture = ExtResource( 4 )
+53/tex_offset = Vector2( 0, 0 )
+53/modulate = Color( 1, 1, 1, 1 )
+53/region = Rect2( 144, 192, 32, 16 )
+53/tile_mode = 0
+53/occluder_offset = Vector2( 0, 0 )
+53/navigation_offset = Vector2( 0, 0 )
+53/shape_offset = Vector2( 0, 0 )
+53/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+53/shape = SubResource( 102 )
+53/shape_one_way = false
+53/shape_one_way_margin = 1.0
+53/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 102 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+53/z_index = -1
 
 [sub_resource type="ConvexPolygonShape2D" id=29]
 points = PoolVector2Array( 0, 24, 16, 24, 16, 48, 0, 48 )
@@ -4251,7 +4275,7 @@ cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 cell_y_sort = true
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 0, 28, 0, 8, 31, 0, 9, 28, 0, 16, 31, 0, 18, 27, 0, 22, 31, 0, 23, 26, 0, 27, 28, 0, 30, 31, 0, 35, 33, 0, 131072, 12, 0, 131074, 12, 0, 131076, 12, 0, 131078, 12, 0, 131082, 12, 0, 131084, 12, 0, 131086, 12, 0, 131090, 17, 0, 131096, 12, 0, 131098, 12, 0, 131100, 12, 0, 131104, 16, 0, 131106, 16, 0, 131108, 35, 0, 393252, 35, 0, 524288, 22, 0, 524297, 22, 0, 524306, 23, 0, 524311, 22, 0, 524316, 22, 0, 524322, 36, 0, 655395, 37, 0, 655396, 35, 0, 786467, 37, 0, 917539, 37, 0, 917540, 35, 0, 1048611, 37, 0 )
+tile_data = PoolIntArray( 0, 28, 0, 8, 31, 0, 9, 28, 0, 16, 31, 0, 18, 53, 0, 22, 31, 0, 23, 26, 0, 27, 28, 0, 30, 31, 0, 35, 33, 0, 131072, 12, 0, 131074, 12, 0, 131076, 12, 0, 131078, 12, 0, 131082, 12, 0, 131084, 12, 0, 131086, 12, 0, 131090, 17, 0, 131096, 12, 0, 131098, 12, 0, 131100, 12, 0, 131104, 16, 0, 131106, 16, 0, 131108, 35, 0, 393252, 35, 0, 524288, 22, 0, 524297, 22, 0, 524306, 23, 0, 524311, 22, 0, 524316, 22, 0, 524322, 36, 0, 655395, 37, 0, 655396, 35, 0, 786467, 37, 0, 917539, 37, 0, 917540, 35, 0, 1048611, 37, 0 )
 
 [node name="decor" type="TileMap" parent="Terrain"]
 tile_set = SubResource( 34 )
@@ -4262,6 +4286,6 @@ format = 1
 
 [node name="torche" type="TileMap" parent="Terrain"]
 tile_set = SubResource( 98 )
-cell_size = Vector2( 8, 8 )
+cell_size = Vector2( 4, 4 )
 format = 1
-tile_data = PoolIntArray( 262160, 2, 0, 262166, 2, 0 )
+tile_data = PoolIntArray( 524320, 2, 0, 524332, 2, 0 )
