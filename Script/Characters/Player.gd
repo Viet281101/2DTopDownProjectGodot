@@ -53,7 +53,7 @@ func _ready():
 	Global.player = self
 	animationTree.active = true
 	animationPlayer.connect("animation_finished", self, "_on_animation_finished")
-#	no_weapon_in_hand()
+#	no_sword_in_hand()
 	for state_node in state_machine.get_children():
 		state_node.connect("finished", self, "_change_state")
 	
@@ -120,14 +120,14 @@ func spawn_dust() -> void:
 		dust.get_node("Dust").flip_v = false
 	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
 
-func no_weapon_in_hand():
+func no_sword_in_hand():
 	sword.monitoring = false
 	sword.visible = false
 	body_weapon.visible = false
 	Global.can_attack = false
 	body.visible = true
 
-func has_weapon_in_hand():
+func has_sword_in_hand():
 	sword.monitoring = true
 	sword.visible = true
 	body_weapon.visible = true
