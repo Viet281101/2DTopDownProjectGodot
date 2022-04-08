@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Script/Characters/states/combat/Defense.gd" type="Script" id=1]
+[ext_resource path="res://assets/world/item_shields/big_red_shield.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
 
 [node name="Defense" type="Node"]
 script = ExtResource( 1 )
+
+[node name="ShieldPivot" type="Position2D" parent="."]
+
+[node name="ShieldDefense" type="Area2D" parent="ShieldPivot"]
+position = Vector2( 30, 0 )
+
+[node name="Shield" type="Sprite" parent="ShieldPivot/ShieldDefense"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldPivot/ShieldDefense"]
+shape = SubResource( 1 )
