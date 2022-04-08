@@ -4198,7 +4198,7 @@ points = PoolVector2Array( 40, 32, 6.07509, 32, 6.47697, 11.198, 40.2347, 10.796
 50/z_index = 0
 
 [sub_resource type="TileSet" id=98]
-0/name = "candleA.tres 0"
+0/name = "candleA"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -4212,7 +4212,7 @@ points = PoolVector2Array( 40, 32, 6.07509, 32, 6.47697, 11.198, 40.2347, 10.796
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "candleB.tres 1"
+1/name = "candleB"
 1/texture = ExtResource( 5 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
@@ -4226,7 +4226,7 @@ points = PoolVector2Array( 40, 32, 6.07509, 32, 6.47697, 11.198, 40.2347, 10.796
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-2/name = "torche.tres 2"
+2/name = "torche"
 2/texture = ExtResource( 6 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )

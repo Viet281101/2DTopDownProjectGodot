@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/characters/warrior/roll.png" type="Texture" id=5]
 [ext_resource path="res://assets/characters/warrior/jump.png" type="Texture" id=6]
 [ext_resource path="res://assets/characters/warrior/shield-block0-sheet.png" type="Texture" id=7]
-[ext_resource path="res://Script/Characters/states/combat/Defense.gd" type="Script" id=8]
+[ext_resource path="res://Scene/Characters/States/Defense.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scene/Characters/States/Roll.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Script/Characters/states/motion/on_ground/Run.gd" type="Script" id=10]
 [ext_resource path="res://Script/Characters/states/motion/on_ground/Walk.gd" type="Script" id=11]
@@ -7761,8 +7761,7 @@ script = ExtResource( 15 )
 [node name="Kick" type="Node" parent="StateMachine"]
 script = ExtResource( 16 )
 
-[node name="Defense" type="Node" parent="StateMachine"]
-script = ExtResource( 8 )
+[node name="Defense" parent="StateMachine" instance=ExtResource( 8 )]
 
 [node name="Hurt" type="Node" parent="StateMachine"]
 script = ExtResource( 17 )
@@ -7792,3 +7791,4 @@ script = ExtResource( 14 )
 [editable path="HurtBox"]
 [editable path="StateMachine/Roll"]
 [editable path="StateMachine/Dash"]
+[editable path="StateMachine/Defense"]
