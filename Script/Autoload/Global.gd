@@ -9,6 +9,7 @@ enum { STATUS_NONE, STATUS_INVINCIBLE, STATUS_POISONED, STATUS_STUNNED }
 
 var camera = null ## Global.camera.shake(time, shake)
 var player setget ,_get_player
+var health = 0
 var warrior_speed = 0
 var can_dash = true
 var can_roll = true
@@ -19,6 +20,7 @@ var jump_attacked = false
 var on_ground
 var sword_count = 0
 var sword_time_count = 2
+var hurt_count = 0
 var state_active
 var combo = [{
 		'damage': 1, 'animation': 'Attack_A', 'effect': null
@@ -52,6 +54,8 @@ func _ready():
 func _process(delta):
 	if sword_count >= 4:
 		sword_count = 0
+	if hurt_count >= 2:
+		hurt_count = 0
 
 func _get_player():
 	return player if is_instance_valid(player) else null

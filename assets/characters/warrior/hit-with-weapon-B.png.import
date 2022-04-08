@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hit.png-5030c342a098d538a63ac2183d4f753b.stex"
+path="res://.import/hit-with-weapon-B.png-47ad20278970178cbd7dc0f04c305bb8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/warrior/hit.png"
-dest_files=[ "res://.import/hit.png-5030c342a098d538a63ac2183d4f753b.stex" ]
+source_file="res://assets/characters/warrior/hit-with-weapon-B.png"
+dest_files=[ "res://.import/hit-with-weapon-B.png-47ad20278970178cbd7dc0f04c305bb8.stex" ]
 
 [params]
 

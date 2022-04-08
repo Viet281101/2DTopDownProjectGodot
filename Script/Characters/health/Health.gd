@@ -9,7 +9,6 @@ signal status_changed
 
 var modifiers = {}
 
-var health = 0
 export(int) var max_health = 9 setget set_max_health
 export(int) var strength = 2
 export(int) var defense = 0
@@ -38,7 +37,7 @@ func _on_Timer_timeout():
 	self.invincible = false
 
 func _ready():
-	health = max_health
+	Global.health = max_health
 	poison_timer.connect('timeout', self, '_on_PoisonTimer_timeout')
 
 func set_max_health(value):
@@ -59,10 +58,10 @@ func _change_status(new_status):
 func take_damage(amount, effect=null):
 	if status == Global.STATUS_INVINCIBLE:
 		return
-	health -= amount
-	health = max(0, health)
-	emit_signal("health_changed", health)
-	emit_signal("damage_taken", health)
+	Global.health -= amount
+	Global.health = max(0, Global.health)
+	emit_signal("health_changed", Global.health)
+	emit_signal("damage_taken", Global.health)
 	
 	if not effect:
 		return
@@ -70,16 +69,16 @@ func take_damage(amount, effect=null):
 		Global.STATUS_POISONED:
 			_change_status(Global.STATUS_POISONED)
 			poison_cycles = effect[1]
-#	print("%s got hit and took %s damage. Health: %s/%s" % [get_name(), amount, health, max_health])
+#	print("%s got hit and took %s damage. Global.health: %s/%s" % [get_name(), amount, Global.health, max_Global.health])
 
-	if health == 0:
+	if Global.health == 0:
 		emit_signal("health_depleted")
 
 func heal(amount):
-	health += amount
-	health = min(health, max_health)
-	emit_signal("health_changed", health)
-#	print("%s got healed by %s points. Health: %s/%s" % [get_name(), amount, health, max_health])
+	Global.health += amount
+	Global.health = min(Global.health, max_health)
+	emit_signal("health_changed", Global.health)
+#	print("%s got healed by %s points. Global.health: %s/%s" % [get_name(), amount, Global.health, max_Global.health])
 
 func add_modifier(id, modifier):
 	modifiers[id] = modifier
