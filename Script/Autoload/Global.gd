@@ -48,10 +48,10 @@ signal invincible_ended
 signal charge_direction_set(direction)
 signal touch_wall()
 
-func _ready():
+func _ready() -> void:
 	sword_time.connect("timeout", self, "_on_SwordTime_timeout")
 
-func _process(delta):
+func _process(_delta : float) -> void:
 	if sword_count >= 4:
 		sword_count = 0
 	if hurt_count >= 2:
@@ -60,11 +60,11 @@ func _process(delta):
 func _get_player():
 	return player if is_instance_valid(player) else null
 
-func _on_SwordTime_timeout():
+func _on_SwordTime_timeout() -> void:
 	sword_count = 0
 	sword_time.stop()
 
-func state_cooldown(cooldown):
+func state_cooldown(cooldown : float) -> void:
 	state_active = false
 	yield(get_tree().create_timer(cooldown), "timeout")
 	state_active = true

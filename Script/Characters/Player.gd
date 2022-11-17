@@ -48,7 +48,7 @@ onready var states_map = {
 	"dead": die_state,
 }
 
-func _ready():
+func _ready() -> void:
 	Global.state_active = true
 	Global.player = self
 	animationTree.active = true
@@ -64,11 +64,11 @@ func _ready():
 func get_body():
 	return body
 
-func _process(delta):
+func _process(delta : float) -> void:
 	if Global.state_active:
 		current_state.update(delta)
 
-func _physics_process(delta):
+func _physics_process(delta : float) -> void:
 	body_nodes_pos()
 	if Global.state_active:
 		current_state.physics_update(delta)

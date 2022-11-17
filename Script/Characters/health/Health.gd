@@ -36,11 +36,11 @@ func start_invincibility(duration):
 func _on_Timer_timeout():
 	self.invincible = false
 
-func _ready():
+func _ready() -> void:
 	Global.health = max_health
 	poison_timer.connect('timeout', self, '_on_PoisonTimer_timeout')
 
-func set_max_health(value):
+func set_max_health(value : int) -> void:
 	max_health = max(0, value)
 
 func _change_status(new_status):
@@ -55,7 +55,7 @@ func _change_status(new_status):
 	status = new_status
 	emit_signal('status_changed', new_status)
 
-func take_damage(amount, effect=null):
+func take_damage(amount : int, effect=null) -> void:
 	if status == Global.STATUS_INVINCIBLE:
 		return
 	Global.health -= amount
@@ -74,7 +74,7 @@ func take_damage(amount, effect=null):
 	if Global.health == 0:
 		emit_signal("health_depleted")
 
-func heal(amount):
+func heal(amount : int) -> void:
 	Global.health += amount
 	Global.health = min(Global.health, max_health)
 	emit_signal("health_changed", Global.health)

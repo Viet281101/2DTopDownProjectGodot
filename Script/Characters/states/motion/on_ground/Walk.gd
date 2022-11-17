@@ -1,6 +1,6 @@
 extends OnGround
 
-export(float) var MAX_WALK_SPEED = 150
+export(float) var MAX_WALK_SPEED = 150.0
 
 onready var animation_state = owner.get_node("AnimationTree").get("parameters/playback")
 
