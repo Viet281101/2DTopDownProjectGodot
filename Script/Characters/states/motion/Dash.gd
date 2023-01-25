@@ -8,21 +8,21 @@ onready var ghost_scene = preload("res://Scene/Characters/States/DashGhost.tscn"
 onready var animation_state = owner.get_node("AnimationTree").get("parameters/playback")
 var sprite
 
-var move_speed = 9000
-var dash_speed = 50000
-var dash_duration = 0.2
-var dash_delay = 0.4
+var move_speed : int = 9000
+var dash_speed : int = 50000
+var dash_duration : float = 0.2
+var dash_delay : float = 0.4
 
-func _ready():
+func _ready() -> void:
 	duration_timer.connect("timeout", self, "_on_DurationTimer_timeout")
 	ghost_timer.connect("timeout", self, "_on_GhostTimer_timeout")
 
-func enter():
+func enter() -> void:
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
 	start_dash(owner.get_node("BodyPivot/Sprite"), dash_duration, input_direction)
 
-func physics_update(delta):
+func physics_update(delta) -> void:
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
 	
@@ -36,7 +36,7 @@ func physics_update(delta):
 	dust_burst.global_position = owner.get_node("DustTrailPos").global_position + Vector2(0, -16)
 	
 
-func instance_ghost():
+func instance_ghost() -> void:
 	var ghost : Sprite = ghost_scene.instance()
 	get_parent().get_parent().get_parent().add_child(ghost)
 	
@@ -48,7 +48,7 @@ func instance_ghost():
 	ghost.flip_h = sprite.flip_h
 	
 
-func start_dash(sprite, duration, direction):
+func start_dash(sprite, duration, direction) -> void:
 	owner.get_node("HurtBox").set_active(false)
 	self.sprite = sprite
 	sprite.material.set_shader_param("mix_weight", 0.7)
@@ -67,7 +67,7 @@ func start_dash(sprite, duration, direction):
 	dust_burst.restart()
 	dust_burst.emitting = true
 
-func is_dashing():
+func is_dashing() -> bool:
 	return !duration_timer.is_stopped()
 
 func end_dash():
@@ -86,8 +86,8 @@ func end_dash():
 	owner.get_node("HurtBox").set_active(true)
 	Global.can_dash = true
 
-func _on_DurationTimer_timeout():
+func _on_DurationTimer_timeout() -> void:
 	end_dash()
 
-func _on_GhostTimer_timeout():
+func _on_GhostTimer_timeout() -> void:
 	instance_ghost()

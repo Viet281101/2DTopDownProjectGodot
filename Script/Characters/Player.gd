@@ -61,7 +61,7 @@ func _ready() -> void:
 	current_state = states_stack[0]
 	_change_state("idle")
 
-func get_body():
+func get_body() -> NodePath:
 	return body
 
 func _process(delta : float) -> void:
@@ -77,7 +77,7 @@ func _input(event):
 	if Global.state_active:
 		current_state.handle_input(event)
 
-func _change_state(state_name):
+func _change_state(state_name) -> void:
 	current_state.exit()
 	
 	if state_name == "previous":
@@ -101,10 +101,10 @@ func _change_state(state_name):
 		current_state.enter()
 	Global.emit_signal("state_changed", states_stack)
 
-func reset(target_global_position):
+func reset(target_global_position) -> void:
 	.reset(target_global_position)
 
-func take_damage_from(damage_source):
+func take_damage_from(damage_source) -> void:
 	.take_damage_from(damage_source)
 	hurt_state.knockback_direction = (damage_source.global_position - global_position).normalized()
 	health.start_invincibility(0.4)
@@ -120,21 +120,21 @@ func spawn_dust() -> void:
 		dust.get_node("Dust").flip_v = false
 	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
 
-func no_sword_in_hand():
+func no_sword_in_hand() -> void:
 	sword.monitoring = false
 	sword.visible = false
 	body_weapon.visible = false
 	Global.can_attack = false
 	body.visible = true
 
-func has_sword_in_hand():
+func has_sword_in_hand() -> void:
 	sword.monitoring = true
 	sword.visible = true
 	body_weapon.visible = true
 	Global.can_attack = true
 	body.visible = false
 
-func body_nodes_pos():
+func body_nodes_pos() -> void:
 	Global.is_dashing = dash_state.is_dashing()
 	Global.is_rolling = roll_state.is_rolling()
 	dust_trail_pos.global_position = body_pivot.global_position + Vector2(0, 42)
@@ -142,7 +142,7 @@ func body_nodes_pos():
 	hurtbox.global_position = body_pivot.global_position + Vector2(0, 6)
 	player_col.rotation_degrees = 90
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(anim_name) -> void:
 	current_state._on_animation_finished(anim_name)
 
 func _on_Die_finished(next_state_name):

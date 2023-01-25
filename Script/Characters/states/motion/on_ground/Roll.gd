@@ -8,13 +8,13 @@ var roll_speed = 18000
 var roll_duration = 0.5
 var roll_delay = 0.2
 
-func _ready():
+func _ready() -> void:
 	duration_timer.connect("timeout", self, "_on_DurationTimer_timeout")
 
-func enter():
+func enter() -> void:
 	start_roll(roll_duration)
 
-func physics_update(delta):
+func physics_update(delta) -> void:
 	var input_direction = get_input_direction()
 	update_look_direction(input_direction)
 	
@@ -24,15 +24,15 @@ func physics_update(delta):
 	owner.move_and_slide(velocity)
 	animation_state.travel("Roll")
 
-func start_roll(duration):
+func start_roll(duration) -> void:
 	duration_timer.wait_time = duration
 	duration_timer.start()
 	owner.get_node("HitBox").set_active(false)
 
-func is_rolling():
+func is_rolling() -> bool:
 	return !duration_timer.is_stopped()
 
-func end_roll():
+func end_roll() -> void:
 	Global.can_roll = false
 	yield(get_tree().create_timer(roll_delay), "timeout")
 	var input_direction = get_input_direction()

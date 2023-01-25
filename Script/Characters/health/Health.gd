@@ -59,6 +59,7 @@ func take_damage(amount : int, effect=null) -> void:
 	if status == Global.STATUS_INVINCIBLE:
 		return
 	Global.health -= amount
+# warning-ignore:narrowing_conversion
 	Global.health = max(0, Global.health)
 	emit_signal("health_changed", Global.health)
 	emit_signal("damage_taken", Global.health)
@@ -76,17 +77,18 @@ func take_damage(amount : int, effect=null) -> void:
 
 func heal(amount : int) -> void:
 	Global.health += amount
-	Global.health = min(Global.health, max_health)
+# warning-ignore:narrowing_conversion
+	Global.health = min(int(Global.health), int(max_health))
 	emit_signal("health_changed", Global.health)
 #	print("%s got healed by %s points. Global.health: %s/%s" % [get_name(), amount, Global.health, max_Global.health])
 
-func add_modifier(id, modifier):
+func add_modifier(id, modifier) -> void:
 	modifiers[id] = modifier
 
-func remove_modifier(id):
+func remove_modifier(id) -> void:
 	modifiers.erase(id)
 
-func _on_PoisonTimer_timeout():
+func _on_PoisonTimer_timeout() -> void:
 	take_damage(POISON_DAMAGE)
 	poison_cycles -= 1
 	if poison_cycles == 0:
